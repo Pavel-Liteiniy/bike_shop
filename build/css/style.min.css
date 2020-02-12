@@ -1,2 +1,2 @@
-
+@font-face{font-family:"Hagin Caps Medium",serif;src:local("Hagin Caps Medium"),local("HaginCapsMedium"),local("Hagin Caps Medium Medium"),local("HaginCapsMediumMedium"),url(../fonts/hagin-caps-medium-medium.woff2) format("woff2"),url(../fonts/hagin-caps-medium-medium.woff) format("woff");font-weight:400;font-style:normal}@font-face{font-family:"Roboto",sans-serif;src:local("Roboto"),url(../fonts/roboto-regular.woff2) format("woff2"),url(../fonts/roboto-regular.woff) format("woff");font-weight:400;font-style:normal}.visually_hidden{position:absolute;overflow:hidden;clip:rect(1px 1px 1px 1px);width:1px;height:1px;padding:0;border:0}*,::after,::before,html{-webkit-box-sizing:border-box;box-sizing:border-box}
 /*# sourceMappingURL=style.min.css.map */
