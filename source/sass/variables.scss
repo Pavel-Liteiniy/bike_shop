@@ -1,0 +1,38 @@
+// Шрифты
+$font_family_serif: "Hagin Caps Medium", "Time New Roman", serif;
+$font_family_sans_serif: "Roboto", "Arial", sans-serif;
+
+// брейкпоинты
+$breakpoint_mobile: 320px;
+$breakpoint_tablet: 768px;
+$breakpoint_desktop: 1024px;
+
+// переменные для сетки
+$width_mobile: 320px;
+$width_tablet: 768px;
+$width_desktop: 1024px;
+
+// Цвета
+$pale_taupe: #baa480;
+$beaver: #9b8869;
+$beige_gray: #6a6454;
+$light_olive_gray: #817155;
+$juicy_chestnut_craiola:#ba4f4f;
+$pearl_white: #e9e1d5;
+$forest_wolf: #f0ede8;
+$signal_black: #333232;
+$pale_brown: #7e5b48;
+$tan: #d5b688;
+$periwinkle_craiola: #f2f5f7;
+$greenish_black: #1a1918;
+$pearl_white: #e9e1d5;
+$gainsborough: #e5e5e5;
+
+// Рамки
+$border_button_dark: 1px solid $beaver;
+$border_button_light: 1px solid $pale_taupe;
+$border_product: 6px solid $forest_wolf;
+
+// Переменные для ретинового медиавыражения
+$retina_dppx: 1.5dppx;
+$retina_dpi: 144dpi;
