@@ -3,7 +3,6 @@
 
   display: flex;
   flex-direction: row;
-  // flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 
@@ -74,10 +73,6 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
-    &--account {
-      justify-content: flex-end;
-    }
   }
 
   &:last-child:not(:first-child) .nav__link {
