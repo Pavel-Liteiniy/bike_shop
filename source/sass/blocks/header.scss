@@ -1,0 +1,169 @@
+.header {
+  &--dark {
+    background-color: $greenish_black;
+  }
+
+  &--light {
+    background-color: $pearl_white;
+  }
+}
+
+.header__inner {
+  @include font_character(18px, 18px, $beaver);
+
+  font-family: $font_family_serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 103px;
+
+  @include for_mobile {
+    position: relative;
+
+    min-height: 54px;
+
+    padding: 10px 10px 10px 15px;
+
+    &--no-js {
+      flex-wrap: wrap;
+
+      .header__button--open,
+      .header__button--close {
+        display: none;
+      }
+
+      .header__wrapper {
+        position: static;
+        width: 100%;
+        transform: none;
+        min-height: auto;
+      }
+    }
+  }
+}
+
+.header__button {
+  display: none;
+
+  @include for_mobile {
+    @include button_default_remove;
+
+    display: block;
+
+    flex-shrink: 0;
+
+    &--open {
+      width: 18px;
+      height: 12px;
+
+      background-image: url("../img/icon_sandwich.svg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    &--close {
+      width: 14px;
+      height: 14px;
+
+      background-image: url("../img/icon_close.svg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+      opacity: 0.6;
+    }
+  }
+}
+
+.header__logo-link {
+  @include for_mobile {
+    margin: auto;
+  }
+
+  @include only_desktop {
+    &:hover:not(.header__logo-link--current),
+    &:focus:not(.header__logo-link--current) {
+      outline: none;
+      opacity: 0.6;
+    }
+
+    &:active:not(.header__logo-link--current) {
+      outline: none;
+      opacity: 0.3;
+    }
+  }
+}
+
+.header__logo-image {
+  @include for_mobile {
+    width: 130px;
+    height: 22px;
+  }
+}
+
+.header__wrapper {
+  flex-grow: 1;
+
+  @include for_mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    min-height: 100vh;
+
+    padding: 18px 15px 18px 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    background-color: $forest_wolf;
+
+    &--open {
+      transform: translateX(0);
+      transition-property: transform;
+      transition-duration: 300ms;
+      transition-timing-function: linear;
+    }
+
+    &--close {
+      transform: translateX(-100%);
+      transition-property: transform;
+      transition-duration: 300ms;
+      transition-timing-function: linear;
+    }
+  }
+}
+
+.header__nav {
+  flex-grow: 1;
+}
+
+.header__list {
+  @include list_default_remove;
+}
+
+.header__link {
+  @include link_default_remove;
+
+  &--cart-shortcut {
+    @include for_mobile {
+      display: block;
+      width: 30px;
+      height: 30px;
+
+      background-image: url("../img/icon_basket.svg");
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+  }
+}

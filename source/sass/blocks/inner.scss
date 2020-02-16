@@ -1,0 +1,13 @@
+.inner {
+  margin: 0 auto;
+  max-width: $max_width_desktop;
+  width: 100%;
+  padding-left: 53px;
+  padding-right: 37px;
+
+  @include for_mobile {
+    min-width: $width_mobile;
+    padding-left: 15px;
+    padding-right: 16px;
+  }
+}
