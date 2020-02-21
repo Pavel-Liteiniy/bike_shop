@@ -21,10 +21,17 @@
   align-items: center;
 
   min-height: 103px;
+  width: 100%;
   padding: 35px 37px 35px 53px;
 
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 2;
+
   @include for_mobile {
-    position: relative;
+    position: absolute;
 
     min-height: 54px;
 
@@ -86,6 +93,8 @@
 }
 
 .header__logo-link {
+  transition-duration: 100ms;
+
   @include for_mobile {
     margin: auto;
   }
@@ -95,11 +104,13 @@
     &:focus:not(.header__logo-link--current) {
       outline: none;
       opacity: 0.6;
+      transform: translateY(-5px);
     }
 
     &:active:not(.header__logo-link--current) {
       outline: none;
       opacity: 0.3;
+      transform: translateY(-8px);
     }
   }
 }
@@ -158,6 +169,8 @@
   @include link_default_remove;
 
   &--cart-shortcut {
+    display: none;
+
     @include for_mobile {
       display: block;
       width: 30px;
