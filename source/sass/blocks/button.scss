@@ -1,0 +1,40 @@
+.button {
+  @include link_default_remove;
+  @include font_character(22px, 22px, $pale_taupe);
+
+  font-family: $font_family_serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.04em;
+  border: $border_button_light;
+
+  display: block;
+
+  transition-duration: 100ms;
+
+  &--dark {
+    @include for_mobile {
+      background-color: rgba($color: $greenish_black, $alpha: 0.8);
+    }
+  }
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  outline: none;
+}
+
+.button--dark:hover,
+.button--dark:focus {
+  @include only_desktop {
+    background-color: $pale_taupe;
+    color: $greenish_black;
+  }
+}
+
+.button--dark:active {
+  @include only_desktop {
+    opacity: 0.3;
+  }
+}
