@@ -90,6 +90,8 @@
   margin: 0 15px 0 0;
   padding: 5px;
 
+  transition-duration: 100ms;
+
   @include for_mobile {
     width: 100%;
     height: auto;
@@ -192,6 +194,7 @@
   @include only_desktop {
     outline: none;
     opacity: 0.6;
+    transform: translateY(-5px);
   }
 }
 
@@ -199,5 +202,6 @@
   @include only_desktop {
     outline: none;
     opacity: 0.3;
+    transform: translateY(-8px);
   }
 }
