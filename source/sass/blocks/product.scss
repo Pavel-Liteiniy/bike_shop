@@ -1,0 +1,158 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &:first-of-type {
+    .picture {
+      margin: auto auto 17%;
+    }
+  }
+
+  &:last-of-type {
+    .picture {
+      margin: auto auto 14%;
+    }
+  }
+}
+
+.product__image {
+  position: relative;
+  min-height: 240px;
+  margin-bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  @include for_mobile {
+    min-height: 178px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 178px;
+    border: 6px solid $forest_wolf;
+  }
+
+  picture {
+    margin: auto auto 20.5%;
+    z-index: 2;
+  }
+}
+
+.product__cart {
+  display: block;
+  width: 50px;
+  height: 50px;
+
+  margin: 0 auto;
+
+  background-color: $juicy_chestnut_craiola;
+  background-image: url("../img/icon_basket_add.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  flex-shrink: 0;
+  z-index: 2;
+
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translate(-50%, 52%);
+
+  transition-duration: 100ms;
+
+  &:hover,
+  &:focus {
+    @include only_desktop {
+      outline: none;
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  &:active {
+    @include only_desktop {
+      outline: none;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.product__content {
+  width: 165px;
+  margin: 0 auto;
+}
+
+.product__name {
+  @include font_character(24px, 30px, $light_olive_gray);
+
+  margin-bottom: 5px;
+
+  font-family: $font_family_serif;
+  text-transform: uppercase;
+
+  @include for_mobile {
+    font-size: 22px;
+  }
+
+  p {
+    @include streak_default_remove;
+  }
+}
+
+.product__description {
+  @include font_character(14px, 18px, $beaver);
+
+  width: 115px;
+  margin: 0 auto 10px;
+
+  letter-spacing: 0.2px;
+
+  @include for_mobile {
+    margin: 0 auto 5px;
+  }
+
+  p {
+    @include streak_default_remove;
+  }
+}
+
+.product__price-link {
+  @include link_default_remove;
+  @include font_character(24px, 30px, $juicy_chestnut_craiola);
+
+  font-family: $font_family_serif;
+  text-transform: uppercase;
+
+  transition-duration: 100ms;
+
+  @include for_mobile {
+    font-size: 22px;
+  }
+
+  &:hover,
+  &:focus {
+    @include only_desktop {
+      opacity: 0.6;
+    }
+  }
+
+  &:active {
+    @include only_desktop {
+      opacity: 0.3;
+    }
+  }
+}
