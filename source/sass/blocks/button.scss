@@ -12,10 +12,21 @@
 
   transition-duration: 100ms;
 
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   &--dark {
+    @include font_character(22px, 22px, $pale_taupe);
+    border: $border_button_dark;
+
     @include for_mobile {
       background-color: rgba($color: $greenish_black, $alpha: 0.8);
     }
+  }
+
+  &--light {
+    @include font_character(22px, 22px, $light_olive_gray);
+    border: $border_button_light;
   }
 }
 
@@ -33,7 +44,15 @@
   }
 }
 
-.button--dark:active {
+.button--light:hover,
+.button--light:focus {
+  @include only_desktop {
+    background-color: $beaver;
+    color: $pearl_white;
+  }
+}
+
+.button:active {
   @include only_desktop {
     opacity: 0.3;
   }
