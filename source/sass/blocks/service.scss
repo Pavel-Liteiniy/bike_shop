@@ -1,0 +1,134 @@
+.service {
+  @include font_character(22px, 30px, $pearl_white);
+
+  background-color: $rangoon_green;
+  background-image: url("../img/background_face@1x.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include for_retina {
+    background-image: url("../img/background_face@2x.jpg");
+  }
+
+  @include for_mobile {
+    @include font_character(16px, 24px, $pearl_white);
+  }
+}
+
+.service__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 576px;
+  padding: 20px 10px 10px;
+
+  @include for_mobile {
+    justify-content: flex-start;
+
+    padding: 25px 5px 0;
+  }
+}
+
+.service__item {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+
+  @include for_mobile {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+  }
+}
+
+.service__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: stretch;
+
+  width: 37.12%;
+  margin: 8px 10px 0 4.5%;
+
+  @include for_mobile {
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+
+    width: 92%;
+    margin: auto auto 0;
+  }
+
+
+  h2 {
+    @include font_character(48px, 56px, $pale_taupe);
+    @include streak_default_remove;
+
+    font-family: $font_family_serif;
+    font-weight: normal;
+    text-transform: uppercase;
+
+    margin: 0 0 17px;
+
+    @include for_mobile {
+      @include font_character(22px, 30px, $pale_taupe);
+
+      margin: 0 0 15px;
+    }
+  }
+
+  p {
+    @include streak_default_remove;
+
+    width: 100%;
+    letter-spacing: 0.2px;
+    margin: 0 0 10px;
+
+    @include for_mobile {
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.service__image {
+  margin: 17px 0 0;
+
+  // временные стили для ликвидации выпадания <picture>
+  width: 462px;
+  height: 358px;
+
+  @include for_mobile {
+    position: relative;
+    bottom: -31px;
+
+    width: 93%;
+    height: 299px;
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+.service__button {
+  width: 48.2%;
+  min-width: 150px;
+  margin: auto 0 0;
+  padding: 18px;
+
+  @include for_mobile {
+    display: none;
+  }
+}
