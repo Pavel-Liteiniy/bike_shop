@@ -1,0 +1,113 @@
+.advantage {
+  @include font_character(22px, 30px, $light_olive_gray);
+
+  text-align: center;
+}
+
+.advantage__inner {
+  overflow: hidden;
+
+  padding: 71px 0 95px;
+
+  @include for_mobile {
+    padding: 25px 0 29px;
+  }
+}
+
+.advantage__topic {
+  @include font_character(48px, 56px, $light_olive_gray);
+
+  width: 75%;
+  margin: 0 auto 17px;
+
+  font-family: $font_family_serif;
+  text-transform: uppercase;
+
+  @include for_mobile {
+    @include font_character(22px, 30px, $light_olive_gray);
+
+    width: 80%;
+    margin: 0 auto 13px;
+  }
+
+  p {
+    @include streak_default_remove;
+  }
+}
+
+.advantage__meaning {
+  width: 60%;
+  margin: 0 auto 82px;
+  letter-spacing: 0.3px;
+
+  @include for_mobile {
+    @include font_character(16px, 24px, $light_olive_gray);
+
+    width: 90%;
+    margin: 0 auto 36px;
+  }
+
+  p {
+    @include streak_default_remove;
+  }
+}
+
+.advantage__wrapper {
+  margin-bottom: 54px;
+
+  @include for_mobile {
+    margin-bottom: 25px;
+  }
+}
+
+.advantage__button {
+  position: relative;
+
+  width: 20%;
+  min-width: 170px;
+  margin: 0 auto;
+  padding: 18px;
+
+  @include for_mobile {
+    width: 61.25%;
+    min-width: 196px;
+    padding: 13px;
+
+    letter-spacing: normal;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 49%;
+    height: 1px;
+
+    border: $border_button_light;
+
+    @include for_mobile {
+      top: 46%;
+    }
+  }
+
+  &::before {
+    left: -157%;
+    right: 103.66%;
+
+    @include for_mobile {
+      left: -25%;
+      right: 105%;
+    }
+  }
+
+  &::after {
+    content: "";
+    left: 104.5%;
+    right: -157%;
+
+    @include for_mobile {
+      left: 104%;
+      right: -24%;
+    }
+  }
+}
