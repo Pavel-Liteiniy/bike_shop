@@ -12,9 +12,6 @@
 
   transition-duration: 100ms;
 
-  overflow: hidden;
-  text-overflow: ellipsis;
-
   &--dark {
     @include font_character(22px, 22px, $pale_taupe);
     border: $border_button_dark;
