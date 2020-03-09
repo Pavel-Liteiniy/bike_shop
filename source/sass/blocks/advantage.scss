@@ -9,8 +9,16 @@
 
   padding: 71px 0 95px;
 
+  &--accessories {
+    padding: 71px 0 94px;
+  }
+
   @include for_mobile {
     padding: 25px 0 29px;
+
+    &--accessories {
+      padding: 51px 0 29px;
+    }
   }
 }
 
@@ -28,6 +36,10 @@
 
     width: 80%;
     margin: 0 auto 13px;
+
+    &--accessories {
+      margin: 0 auto 15px;
+    }
   }
 
   p {
@@ -40,11 +52,21 @@
   margin: 0 auto 82px;
   letter-spacing: 0.3px;
 
+  &--accessories {
+    width: 55%;
+    letter-spacing: 0.2px;
+    margin: 0 auto 64px;
+  }
+
   @include for_mobile {
     @include font_character(16px, 24px, $light_olive_gray);
 
     width: 90%;
     margin: 0 auto 36px;
+
+    &--accessories {
+      margin: 0 auto 31px;
+    }
   }
 
   p {
@@ -53,7 +75,7 @@
 }
 
 .advantage__wrapper {
-  margin-bottom: 54px;
+  margin-bottom: 72px;
 
   @include for_mobile {
     margin-bottom: 25px;
@@ -71,7 +93,7 @@
   @include for_mobile {
     width: 61.25%;
     min-width: 196px;
-    padding: 13px;
+    padding: 13px 10px;
 
     letter-spacing: normal;
   }
