@@ -23,6 +23,9 @@ html {
 body {
   @include streak_default_remove;
 
+  position: relative;
+  overflow: visible;
+
   font-family: $font_family_sans_serif;
 
   min-width: $width_mobile;
