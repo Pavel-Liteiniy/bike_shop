@@ -1,10 +1,11 @@
 .presentation__inner {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-end;
 
   min-height: 768px;
+  height: 1px;
 
   padding: 103px 42px 30px;
 
@@ -38,13 +39,15 @@
 .presentation__wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
+  height: 100%;
+
   margin: auto 7.26% auto 0;
-  padding-bottom: 50px;
 
   @include for_mobile {
+    width: 100%;
     margin: 23px auto auto;
     padding: 14px 19px 10px 19px;
   }
@@ -56,9 +59,8 @@
     padding-left: 6px;
 
     img {
-      min-width: auto;
       max-width: 100%;
-      width: auto;
+      min-width: 0;
       height: auto;
     }
   }
@@ -66,9 +68,8 @@
 
 .presentation__button {
   min-width: 240px;
-  min-height: 60px;
-  margin: 61px 0 0 13px;
-  padding: 18px 68px 14px 67px;
+  margin: 57px 0 50px 13px;
+  padding: 19px 20px 17px 20px;
 
   @include for_mobile {
     width: 75%;
