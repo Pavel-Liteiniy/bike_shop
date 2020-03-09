@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body>
+<body class="page">
   <header class="header header--dark">
     <div class="header__inner header__inner--no-js inner">
       <button class="header__button header__button--open" type="button" aria-label="Открыть меню"></button>
@@ -19,7 +19,7 @@
       <div class="header__wrapper header__wrapper--open">
         <button class="header__button header__button--close" type="button" aria-label="Закрыть меню"></button>
         <nav class="header__nav nav">
-          <div class="nav__inner inner">
+          <div class="nav__inner nav__inner inner">
             <ul class="nav__list nav__list--categories">
               <li class="nav__item"><a class="nav__link" href="catalogue.html">Велосипеды</a></li>
               <li class="nav__item"><a class="nav__link" href="card.html">Аксессуары</a></li>
@@ -99,7 +99,7 @@
         <div class="advantage__meaning">
           <p>Бесплатный выездной тест-драйв на все модели. Система рассрочки 0-0-5. Для членов клуба бесплатно предоставляется выездной сервис, зимнее&nbsp;хранение и куча привелегий от партнеров.</p>
         </div>
-        <div class="advantage__wrapper slider slider-products">
+        <div class="advantage__wrapper slider slider--products">
           <div class="slider__item product">
             <div class="product__image">
               <picture>
@@ -156,7 +156,7 @@
                 <p>Schwinn Stingray OCC</p>
               </div>
               <div class="product__description">
-                <p>20”+24”, сталь США</p>
+                <p>20”+24”, сталь<br>США</p>
               </div>
               <div class="product__price">
                 <a class="product__price-link" href="#">34 000 ‎₽</a>
@@ -205,8 +205,8 @@
               </div>
             </div>
           </div>
-          <button class="slider__button slider__button--prev" type="button" aria-label="ПОказать предыдущие три товара"></button>
-          <button class="slider__button slider__button--next" type="button" aria-label="ПОказать следующие три товара"></button>
+          <button class="slider__button slider__button--prev" type="button" aria-label="Показать предыдущие три товара"></button>
+          <button class="slider__button slider__button--next" type="button" aria-label="Показать следующие три товара"></button>
         </div>
         <div class="advantage__wrapper-link">
           <a class="advantage__button button button--light" href="catalogue.html">Все велосипеды</a>
@@ -225,15 +225,218 @@
           </div>
           <div class="service__image">
             <picture>
-              <source media="(min-width: 1024px)" srcset="img/employee@2x.jpg 2x, img/employee@1x.jpg 1x">
-              <source media="(min-width: 768px)" srcset="img/employee@2x.jpg 2x, img/employee@1x.jpg 1x">
-              <img src="img/employee@1x.jpg" srcset="img/employee@2x.jpg 2x" width="462" height="358" alt="Фото сотрудника за рабочим процессом" />
+              <source media="(min-width: 768px)" srcset="img/employee_desktop@2x.jpg 2x, img/employee_desktop@1x.jpg 1x">
+              <img src="img/employee_mobile@1x.jpg" srcset="img/employee_mobile@2x.jpg 2x" width="289" height="300" alt="Фото сотрудника за рабочим процессом" />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="advantage advantage--accessories">
+      <div class="advantage__inner advantage__inner--accessories inner">
+        <h1 class="visually_hidden">Наши аксессуары</h1>
+        <div class="advantage__topic advantage__topic--accessories">
+          <p>Запчасти и аксессуары</p>
+        </div>
+        <div class="advantage__meaning advantage__meaning--accessories">
+          <p>Всегда большой выбор запчастей и&nbsp;аксессуаров для чоппер-байков. Если вы чего-то не нашли в наличии, наши консультанты помогут заказать и доставить товар из&nbsp;любой точки мира.</p>
+        </div>
+        <div class="advantage__wrapper slider slider--accessories">
+          <div class="slider__item slider__item--accessories product">
+            <div class="product__image product__image--accessories">
+              <picture>
+                <img src="img/item_pedals@1x.png" srcset="img/item_pedals@2x.png 2x" width="189" height="152" alt="Фото аксессуара Педали" />
+              </picture>
+              <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+            </div>
+            <div class="product__content">
+              <div class="product__name">
+                <p>Педали<br>BIKEIN Pro</p>
+              </div>
+              <div class="product__description product__description--accessories">
+                <p>алюминий+ольха 120х77х30мм, 394 гр</p>
+              </div>
+              <div class="product__price">
+                <a class="product__price-link" href="#">₽ 2 500</a>
+              </div>
+            </div>
+          </div>
+          <div class="slider__item slider__item--accessories product">
+            <div class="product__image product__image--accessories">
+              <picture>
+                <img src="img/item_bag@1x.png" srcset="img/item_bag@2x.png 2x" width="196" height="100" alt="Фото аксессуара Велосипедная сумка" />
+              </picture>
+              <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+            </div>
+            <div class="product__content">
+              <div class="product__name">
+                <p>Сумка на руль<br>B-Soul</p>
+              </div>
+              <div class="product__description product__description--accessories">
+                <p>15х10 х5 cm натуральная кожа</p>
+              </div>
+              <div class="product__price">
+                <a class="product__price-link" href="#">3200 ‎₽</a>
+              </div>
+            </div>
+          </div>
+          <div class="slider__item slider__item--accessories product">
+            <div class="product__image product__image--accessories">
+              <picture>
+                <img src="img/item_grips@1x.png" srcset="img/item_grips@2x.png 2x" width="167" height="93" alt="Фото аксессуара Грипсы" />
+              </picture>
+              <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+            </div>
+            <div class="product__content">
+              <div class="product__name">
+                <p>Грипсы Propalm</p>
+              </div>
+              <div class="product__description product__description--accessories">
+                <p>натуральная кожа с&nbsp;фиксаторами</p>
+              </div>
+              <div class="product__price">
+                <a class="product__price-link" href="#">1800 ‎₽</a>
+              </div>
+            </div>
+          </div>
+          <div class="slider__item slider__item--accessories product">
+            <div class="product__image product__image--accessories">
+              <picture>
+                <img src="img/item_saddle@1x.png" srcset="img/item_saddle@2x.png 2x" width="197" height="143" alt="Фото аксессуара Велосипедное сиденье" />
+              </picture>
+              <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+            </div>
+            <div class="product__content">
+              <div class="product__name">
+                <p>Седло Brooks&nbsp;B66 S</p>
+              </div>
+              <div class="product__description product__description--accessories">
+                <p>натуральная кожа доступно в 3 цветах</p>
+              </div>
+              <div class="product__price">
+                <a class="product__price-link" href="#">8625 ‎₽</a>
+              </div>
+            </div>
+          </div>
+          <div class="slider__item slider__item--accessories product">
+            <div class="product__image product__image--accessories">
+              <picture>
+                <img src="img/item_wheel@1x.png" srcset="img/item_wheel@2x.png 2x" width="215" height="155" alt="Фото аксессуара Колесо со спицами" />
+              </picture>
+              <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+            </div>
+            <div class="product__content">
+              <div class="product__name">
+                <p>Колеса Strida&nbsp;18”</p>
+              </div>
+              <div class="product__description product__description--accessories">
+                <p>покрышки Innova цена за 2 колеса</p>
+              </div>
+              <div class="product__price">
+                <a class="product__price-link" href="#">6780 ‎₽</a>
+              </div>
+            </div>
+          </div>
+          <div class="slider__item slider__item--accessories product">
+            <div class="product__image product__image--accessories">
+              <picture>
+                <img src="img/item_rudder@1x.png" srcset="img/item_rudder@2x.png 2x" width="291" height="178" alt="Фото аксессуара Руль" />
+              </picture>
+              <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+            </div>
+            <div class="product__content">
+              <div class="product__name">
+                <p>Руль<br>Lowrider U</p>
+              </div>
+              <div class="product__description product__description--accessories">
+                <p>11" - 25.4mm хромированная сталь</p>
+              </div>
+              <div class="product__price">
+                <a class="product__price-link" href="#">2 350 ‎₽</a>
+              </div>
+            </div>
+          </div>
+          <button class="slider__button slider__button--prev" type="button" aria-label="Показать предыдущие три товара"></button>
+          <button class="slider__button slider__button--next" type="button" aria-label="Показать следующие три товара"></button>
+        </div>
+        <div class="advantage__wrapper-link">
+          <a class="advantage__button button button--light" href="catalogue.html">Перейти в каталог</a>
+        </div>
+      </div>
+    </section>
+    <section class="service">
+      <div class="service__inner service__inner--club inner">
+        <h1 class="visually_hidden">Клуб чопперистов</h1>
+        <div class="service__item service__item--club">
+          <div class="service__content service__content--club">
+            <h2>Вступай в клуб</h2>
+            <p>У тебя уже есть чоппер-байк?</p>
+            <p>Регистрируйся и получай специальные привелегии, приглашения на закрытые мероприятия, специальные цены в&nbsp;нашем&nbsp;магазине и&nbsp;много других плюшек.</p>
+            <a class="service__button service__button--club button button--dark" href="#">Вступить</a>
+          </div>
+          <div class="service__image service__image--club">
+            <picture>
+              <source media="(min-width: 768px)" srcset="img/biker_desktop@2x.jpg 2x, img/biker_desktop@1x.jpg 1x">
+              <img src="img/biker_mobile@1x.jpg" srcset="img/biker_mobile@2x.jpg 2x" width="289" height="300" alt="Фото сотрудника за рабочим процессом" />
             </picture>
           </div>
         </div>
       </div>
     </section>
   </main>
+  <footer class="footer">
+    <div class="footer__inner inner">
+      <nav class="footer__nav nav nav--bottom">
+        <div class="nav__inner nav__inner--bottom inner">
+          <ul class="nav__list nav__list--bottom">
+            <li class="nav__item"><a class="nav__link nav__link--bottom" href="catalogue.html">Велосипеды</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--bottom" href="card.html">Аксессуары</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--bottom" href="#">Запчасти</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--bottom" href="#">Мастерская</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--bottom" href="#">Тест-драйв</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--bottom" href="#">Доставка и оплата</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--bottom" href="#">Рассрочка</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--bottom" href="#">Вступление в клуб</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="footer__wrapper">
+        <div class="footer__socials socials">
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a class="socials__link socials__link--dark" href="#" aria-label="Мы в социальной сети Вконтакте">
+                <svg class="socials__img" width="22" height="13" viewBox="0 0 22 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path clip-rule="evenodd"
+                    d="M10.4666 12.5546H11.7453C11.7453 12.5546 12.1316 12.5128 12.3288 12.3033C12.5103 12.111 12.5045 11.7498 12.5045 11.7498C12.5045 11.7498 12.4795 10.0589 13.2758 9.80985C14.0609 9.56457 15.0689 11.4441 16.1374 12.1668C16.9453 12.7138 17.5593 12.5938 17.5593 12.5938L20.4161 12.5546C20.4161 12.5546 21.9106 12.4639 21.202 11.3059C21.1439 11.2111 20.7893 10.4493 19.0779 8.88367C17.2866 7.24511 17.5264 7.51014 19.6843 4.67578C20.9984 2.94963 21.5238 1.8958 21.3597 1.44444C21.2032 1.01455 20.2367 1.12818 20.2367 1.12818L17.02 1.14793C17.02 1.14793 16.7815 1.11587 16.6046 1.22005C16.4318 1.32223 16.3206 1.56036 16.3206 1.56036C16.3206 1.56036 15.8115 2.89611 15.1325 4.03209C13.7002 6.42911 13.1274 6.55562 12.8934 6.40679C12.3488 6.0599 12.4847 5.01322 12.4847 4.26964C12.4847 1.94675 12.8422 0.978205 11.7886 0.727483C11.4389 0.644196 11.1816 0.589243 10.2874 0.58037C9.13968 0.568636 8.16822 0.583805 7.61816 0.849409C7.25223 1.026 6.96994 1.41954 7.14187 1.44215C7.35446 1.4702 7.83598 1.57009 8.09126 1.91269C8.42088 2.3546 8.40927 3.34718 8.40927 3.34718C8.40927 3.34718 8.59862 6.08165 7.96696 6.42139C7.53336 6.65436 6.93858 6.17868 5.6616 4.00404C5.00728 2.8901 4.51327 1.65882 4.51327 1.65882C4.51327 1.65882 4.41802 1.4287 4.24812 1.30563C4.04192 1.15651 3.75382 1.109 3.75382 1.109L0.697146 1.12875C0.697146 1.12875 0.238281 1.14135 0.0698369 1.33797C-0.0800202 1.51285 0.0579295 1.87462 0.0579295 1.87462C0.0579295 1.87462 2.451 7.39222 5.16062 10.1728C7.64517 12.7221 10.4666 12.5546 10.4666 12.5546Z" />
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link socials__link--dark" href="#" aria-label="Мы в социальной сети Фейсбук">
+                <svg class="socials__img" width="10" height="19" viewBox="0 0 10 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.96195 3.43458H9.32129V0H6.54782V0.0123865C3.18728 0.12968 2.49853 1.99126 2.43782 3.94648H2.43091V5.66154H0.142578V9.02503H2.43091V18.041H5.87955V9.02503H8.70456L9.25028 5.66154H5.88069V4.62535C5.88069 3.96457 6.32686 3.43458 6.96195 3.43458Z" />
+                </svg>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link socials__link--dark" href="#" aria-label="Мы в социальной сети Инстаграм">
+                <svg class="socials__img" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.285645 4C0.285645 1.79086 2.07651 0 4.28565 0H13.4285C15.6376 0 17.4285 1.79086 17.4285 4V13.1429C17.4285 15.352 15.6376 17.1429 13.4285 17.1429H4.28564C2.0765 17.1429 0.285645 15.352 0.285645 13.1429V4ZM14.4182 4.00003C14.4182 4.63122 13.9065 5.14289 13.2753 5.14289C12.6441 5.14289 12.1324 4.63122 12.1324 4.00003C12.1324 3.36885 12.6441 2.85718 13.2753 2.85718C13.9065 2.85718 14.4182 3.36885 14.4182 4.00003ZM11.1426 8.56224C11.1426 9.8246 10.1193 10.8479 8.85691 10.8479C7.59454 10.8479 6.57119 9.8246 6.57119 8.56224C6.57119 7.29987 7.59454 6.27652 8.85691 6.27652C10.1193 6.27652 11.1426 7.29987 11.1426 8.56224ZM13.1426 8.56224C13.1426 10.9292 11.2238 12.8479 8.85691 12.8479C6.48997 12.8479 4.57119 10.9292 4.57119 8.56224C4.57119 6.1953 6.48997 4.27652 8.85691 4.27652C11.2238 4.27652 13.1426 6.1953 13.1426 8.56224Z" fill="currentColor" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a class="footer__logo-link footer__logo-link--current" aria-label="Главная страница">
+          <img class="footer__logo-image" src="img/logo.svg" width="184" height="29" alt="Логотип магазина Chopper Bikeshop">
+        </a>
+        <a href="#" class="footer__rights">
+          <div class="footer__rights-year">©2018</div>
+          <div class="footer__rights-description">Политика конфиденциальности</div>
+        </a>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/script.js"></script>
 </body>
