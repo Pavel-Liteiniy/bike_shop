@@ -1,0 +1,134 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  width: 100%;
+  min-height: 172px;
+  padding: 0 8%;
+
+  z-index: 2;
+  background-color: transparent;
+
+  @include for_mobile {
+    padding: 0;
+  }
+}
+
+.footer__nav {
+  @include for_mobile {
+    display: none;
+  }
+}
+
+.footer__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 42px;
+  padding: 4px 0.7% 4px 1%;
+
+  @include for_mobile {
+    flex-direction: column;
+    justify-content: flex-start;
+
+    min-height: 172px;
+    padding: 14px 3% 14px;
+  }
+}
+
+.footer__socials {
+  min-width: 100px;
+  width: 9%;
+  padding: 5px;
+
+  @include for_mobile {
+    width: 37%;
+    padding: 1px 5px;
+  }
+}
+
+.footer__logo-link {
+  display: block;
+  margin: 0 0 0 15.3%;
+
+  @include for_mobile {
+    order: -1;
+    margin: 0;
+  }
+}
+
+.footer__logo-image {
+  width: 184px;
+
+  @include for_mobile {
+    width: 130px;
+  }
+}
+
+.footer__rights {
+  @include link_default_remove;
+  @include font_character(14px, 18px, $pale_taupe);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+
+  min-width: 285px;
+  width: 25%;
+
+  text-align: center;
+  letter-spacing: 0.2px;
+
+  @include for_mobile {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+    min-height: 64px;
+    margin: 11px auto 0;
+  }
+
+  @include only_desktop {
+    &:hover,
+    &:focus {
+      outline: none;
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+.footer__rights-year {
+  padding-right: 12px;
+
+  color: inherit;
+  border-right: 1px solid currentColor;
+
+  @include for_mobile {
+    border: none;
+    padding: 5px;
+  }
+}
+
+.footer__rights-description {
+  padding-left: 12px;
+
+  @include for_mobile {
+    padding: 5px;
+  }
+}
