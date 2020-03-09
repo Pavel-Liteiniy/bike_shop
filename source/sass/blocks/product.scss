@@ -4,14 +4,15 @@
   justify-content: flex-start;
   align-items: center;
 
+
   &:first-of-type {
-    .picture {
+    picture {
       margin: auto auto 17%;
     }
   }
 
   &:last-of-type {
-    .picture {
+    picture {
       margin: auto auto 14%;
     }
   }
@@ -44,8 +45,20 @@
   }
 
   picture {
+    display: block;
+
     margin: auto auto 20.5%;
     z-index: 2;
+
+    @include for_mobile {
+      margin: auto auto 9.5%;
+    }
+  }
+
+  &--accessories {
+    picture {
+      margin: auto;
+    }
   }
 }
 
@@ -116,10 +129,14 @@
 .product__description {
   @include font_character(14px, 18px, $beaver);
 
-  width: 115px;
+  width: 91%;
   margin: 0 auto 10px;
 
   letter-spacing: 0.2px;
+
+  &--accessories {
+    margin: 0 auto 6px;
+  }
 
   @include for_mobile {
     margin: 0 auto 5px;
