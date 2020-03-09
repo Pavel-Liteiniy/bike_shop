@@ -24,25 +24,48 @@
   min-height: 576px;
   padding: 20px 10px 10px;
 
+  &--club {
+    min-height: 777px;
+    padding: 20px 10px 180px;
+  }
+
   @include for_mobile {
     justify-content: flex-start;
 
     padding: 25px 5px 0;
+
+    &--club {
+      min-height: 846px;
+    }
   }
 }
 
 .service__item {
   display: flex;
   flex-direction: row-reverse;
+  flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 
   margin: auto;
+
+  &--club {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 11.9% 0 4.65%;
+    margin: 6% auto auto;
+  }
 
   @include for_mobile {
     flex-direction: column;
     justify-content: flex-start;
     margin: 0;
+
+    flex-grow: 1;
+
+    &--club {
+      padding: 0;
+    }
   }
 }
 
@@ -56,13 +79,24 @@
   width: 37.12%;
   margin: 8px 10px 0 4.5%;
 
+  &--club {
+    width: 48%;
+    margin: 18px 0 0 4.5%;
+    padding-right: 2%;
+  }
+
   @include for_mobile {
     align-items: center;
     justify-content: flex-start;
     text-align: center;
 
     width: 92%;
-    margin: auto auto 0;
+    margin: 0 auto 0;
+
+    &--club {
+      width: 80%;
+      padding: 0;
+    }
   }
 
 
@@ -105,19 +139,35 @@
   width: 462px;
   height: 358px;
 
+  &--club {
+    width: 47.1%;
+    margin: 27px 0 0;
+  }
+
   @include for_mobile {
     position: relative;
-    bottom: -31px;
+    bottom: -25px;
 
     width: 93%;
-    height: 299px;
-    margin: 0;
+    height: auto;
+    margin: auto auto 0;
+
+    &--club {
+      margin: 0 auto auto;
+      bottom: -30px;
+    }
   }
 
   img {
+    display: block;
+    margin: 0 auto;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+
+    max-width: 592px;
+    max-height: 358px;
+
+    object-fit: contain;
     object-position: 50% 50%;
   }
 }
@@ -128,7 +178,20 @@
   margin: auto 0 0;
   padding: 18px;
 
+  &--club {
+    width: 46.5%;
+  }
+
   @include for_mobile {
     display: none;
+
+    &--club {
+      display: block;
+      width: 79%;
+      margin: 34px 0 0;
+      padding: 13px 10px;
+
+      letter-spacing: 0;
+    }
   }
 }
