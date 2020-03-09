@@ -7,7 +7,6 @@ header.classList.remove('header__inner--no-js');
 var openButton = document.querySelector('.header__button--open');
 var closeButton = document.querySelector('.header__button--close');
 var modal = document.querySelector('.header__wrapper');
-var page = document.querySelector('.page');
 
 modal.classList.remove('header__wrapper--open');
 modal.classList.add('header__wrapper--close');
