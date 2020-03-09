@@ -20,15 +20,13 @@
   justify-content: space-between;
   align-items: center;
 
-  min-height: 103px;
-  width: 100%;
-  padding: 35px 37px 35px 53px;
+  padding: 35px 21px 35px 53px;
 
   position: absolute;
   top: 0;
   left: 0;
 
-  z-index: 2;
+  z-index: 10;
 
   @include for_mobile {
     position: absolute;
@@ -124,6 +122,7 @@
 
 .header__wrapper {
   flex-grow: 1;
+  width: 79.94%;
 
   @include for_mobile {
     position: absolute;
