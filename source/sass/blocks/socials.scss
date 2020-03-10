@@ -15,30 +15,31 @@
 
   display: block;
 
-  &--dark {
+  transition: 100ms;
+
+  &--middle {
     color: $beige_gray;
+  }
 
-    transition: 100ms;
+  &--dark {
+    color: $pale_taupe;
+  }
 
+  &--light {
+    color: $beaver;
+  }
+
+  @include only_desktop {
     &:hover,
     &:focus {
-      @include only_desktop {
         outline: none;
         opacity: 0.6;
         transform: translateY(-5px);
       }
-    }
-
     &:active {
-      @include only_desktop {
         outline: none;
         opacity: 0.3;
         transform: translateY(-8px);
-      }
     }
-  }
-
-  &--light {
-    color: $pale_taupe;
   }
 }
