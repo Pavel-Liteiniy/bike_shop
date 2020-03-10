@@ -20,6 +20,13 @@
     padding: 15px 0;
     margin: 0 auto;
 
+    border-top: $border_button_light;
+    border-bottom: $border_button_light;
+  }
+
+  &--dark {
+    color: $pale_taupe;
+
     border-top: $border_button_dark;
     border-bottom: $border_button_dark;
   }
@@ -218,8 +225,8 @@
   }
 }
 
-.nav__link:hover:not(.nav__link--current),
-.nav__link:focus:not(.nav__link--current) {
+.nav__link:hover:not(.nav__link--current):not(.nav__link--active),
+.nav__link:focus:not(.nav__link--current):not(.nav__link--active) {
   @include only_desktop {
     outline: none;
     opacity: 0.6;
@@ -227,7 +234,7 @@
   }
 }
 
-.nav__link:active:not(.nav__link--current) {
+.nav__link:active:not(.nav__link--current):not(.nav__link--active) {
   @include only_desktop {
     outline: none;
     opacity: 0.3;
