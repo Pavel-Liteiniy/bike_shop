@@ -111,6 +111,14 @@
       transform: translateY(-8px);
     }
   }
+
+  &--dark {
+    color: $pale_taupe;
+  }
+
+  &--light {
+    color: $beaver;
+  }
 }
 
 .header__logo-image {
