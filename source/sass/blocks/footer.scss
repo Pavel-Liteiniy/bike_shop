@@ -3,6 +3,12 @@
   bottom: 0;
 
   width: 100%;
+
+  color: $pale_taupe;
+
+  &--light {
+    color: $beaver;
+  }
 }
 
 .footer__inner {
@@ -63,9 +69,28 @@
   display: block;
   margin: 0 0 0 15.3%;
 
+  transition-duration: 100ms;
+
+  color: inherit;
+
   @include for_mobile {
     order: -1;
     margin: 0;
+  }
+
+  @include only_desktop {
+    &:hover:not(.footer__logo-link--current),
+    &:focus:not(.footer__logo-link--current) {
+      outline: none;
+      opacity: 0.6;
+      transform: translateY(-5px);
+    }
+
+    &:active:not(.footer__logo-link--current) {
+      outline: none;
+      opacity: 0.3;
+      transform: translateY(-8px);
+    }
   }
 }
 
@@ -79,7 +104,7 @@
 
 .footer__rights {
   @include link_default_remove;
-  @include font_character(14px, 18px, $pale_taupe);
+  @include font_character(14px, 18px, inherit);
 
   display: flex;
   flex-direction: row;
