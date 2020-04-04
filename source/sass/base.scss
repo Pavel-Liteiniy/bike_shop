@@ -5,6 +5,7 @@
   width: 1px;
   height: 1px;
   padding: 0;
+  margin: 0;
   border: 0;
 }
 
@@ -32,4 +33,12 @@ body {
   min-height: 100vh;
 
   background-color: $pearl_white;
+}
+
+a,
+input,
+button,
+label,
+select {
+  cursor: pointer;
 }
