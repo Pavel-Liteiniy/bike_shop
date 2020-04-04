@@ -1,0 +1,319 @@
+.settings {
+  width: 13.32%;
+  min-width: 182px;
+  margin: 0 0 0 3.85%;
+
+  @include for_mobile {
+    width: 95.31%;
+    margin: 0;
+    padding: 0 20px 0 15px;
+
+    position: absolute;
+    top: 2px;
+    left: 0;
+
+    z-index: 10;
+
+    background-color: $forest_wolf;
+    box-shadow: 4px 0 20px rgba($dark_rangoon, 0.1);
+
+    transition-duration: 300ms;
+
+    &--hide {
+      left: -100%;
+    }
+
+    &--no-js {
+      position: static;
+
+      width: 90.63%;
+      margin: 10px auto 0;
+
+      .settings__button-close {
+        display: none;
+      }
+    }
+  }
+}
+
+.settings__inner {
+  min-width: auto;
+  padding: 0;
+}
+
+.settings__band {
+  margin: 0 0 12px;
+}
+
+.settings__form {
+  fieldset {
+    @include font_character(14px, 18px, $beaver);
+    @include streak_default_remove;
+
+    position: relative;
+
+    letter-spacing: 0.2px;
+    font-family: $font_family_sans_serif;
+    border: none;
+  }
+
+  legend {
+    @include font_character(18px, 18px, $beaver);
+    @include streak_default_remove;
+
+    display: block;
+    width: 100%;
+    padding: 0 14px 0 0;
+
+    letter-spacing: 0.04em;
+    font-family: $font_family_serif;
+  }
+
+  input[type="checkbox"] + label {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 65%;
+      transform: translateY(-50%);
+
+      content: "";
+      width: 16px;
+      height: 16px;
+
+      border: $border_button_light;
+    }
+  }
+
+  input[type="checkbox"]:checked + label {
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 65%;
+      transform: translateY(-50%);
+
+      content: "";
+      width: 16px;
+      height: 16px;
+
+      padding: 4px;
+
+      background-color: $beaver;
+      background-clip: content-box;
+    }
+  }
+
+  @include only_desktop {
+    input[type="checkbox"]:not(:checked) + label:hover,
+    input[type="checkbox"]:not(:checked):focus + label {
+      &::after {
+        position: absolute;
+        left: 0;
+        top: 65%;
+        transform: translateY(-50%);
+
+        content: "";
+        width: 16px;
+        height: 16px;
+
+        padding: 7px;
+
+        background-color: $beaver;
+        background-clip: content-box;
+      }
+    }
+  }
+}
+
+.settings__group {
+  padding: 15px 0 15px;
+
+  &:nth-of-type(n+5) {
+    border-top: $border_button_light;
+  }
+
+  &--electro {
+    padding: 15px 0 14px;
+  }
+
+  &--material {
+    padding: 11px 0 15px;
+  }
+
+  @include for_mobile {
+    width: 67%;
+  }
+}
+
+.settings__button {
+  @include button_default_remove;
+
+  color: inherit;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 14px;
+  height: 18px;
+
+  transition-duration: 100ms;
+
+  @include only_desktop {
+    &:hover,
+    &:focus {
+      outline: none;
+      opacity: 0.6;
+    }
+
+    &:active {
+      outline: none;
+      opacity: 0.3;
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 45%;
+
+    content: "";
+    width: 14px;
+    height: 1px;
+
+    background-color: currentColor;
+  }
+
+  &--open::after {
+    transform: rotate(90deg);
+  }
+}
+
+.settings__wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &--hide {
+    height: 0;
+  }
+
+  &--electro {
+    padding: 4px 0 0 0;
+  }
+
+  &--material {
+    padding-top: 8px;
+  }
+}
+
+.settings__list {
+  @include font_character(18px, 18px, $beaver);
+  @include button_default_remove;
+
+  @include only_desktop {
+    display: none;
+  }
+
+  font-family: $font_family_serif;
+  letter-spacing: 0.04em;
+}
+
+.settings__button-wrapper {
+  @include only_desktop {
+    display: none;
+  }
+
+  @include for_mobile {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 58px;
+    padding: 18px 0 22px;
+
+    border-bottom: $border_button_light;
+  }
+}
+
+.settings__button-reset {
+  @include font_character(18px, 18px, $juicy_chestnut_craiola);
+  @include button_default_remove;
+
+  @include only_desktop {
+    display: none;
+  }
+
+  @include for_mobile {
+    font-family: $font_family_serif;
+    letter-spacing: 0.04em;
+  }
+}
+
+.settings__button-close {
+  @include button_default_remove;
+
+  position: relative;
+
+  width: 17px;
+  height: 16px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 47%;
+
+    content: "";
+    width: 18px;
+    height: 2px;
+
+    background-color: $beaver;
+  }
+
+  &::before {
+    transform: rotate(135deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}
+
+.settings__range {
+  @include for_mobile {
+    min-height: 82px;
+    padding: 26px 0 32px;
+  }
+}
+
+.settings__description {
+  padding: 10px 0 0 27px;
+
+  &--electro-yes {
+    padding-top: 11px;
+  }
+
+  &--electro-no {
+    padding-top: 10px;
+    top: 70%;
+  }
+
+  &--color-black {
+    padding: 19px 0 0 27px;
+  }
+
+  &--wheels-20 {
+    padding: 19px 0 0 27px;
+  }
+}
