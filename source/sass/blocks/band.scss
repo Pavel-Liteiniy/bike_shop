@@ -1,0 +1,127 @@
+.band {
+  @include for_mobile {
+    width: 67%;
+    padding: 30px 0 0;
+
+    border-top: $border_button_light;
+  }
+}
+
+.band__controls {
+  @include font_character(14px, 18px, $beaver);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  margin: 0 0 19px 0;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 5.5%;
+
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: currentColor;
+  }
+
+  input {
+    display: block;
+    width: 41.76%;
+    height: 30px;
+    padding: 5px 10px;
+
+    color: inherit;
+    letter-spacing: 0.2px;
+
+    border: $border_button_light;
+    background-color: transparent;
+
+    transition-duration: 100ms;
+
+    @include only_desktop {
+      &:hover,
+      &:focus {
+        border: $border_button_dark;
+        color: $signal_black;
+      }
+
+      &:active {
+        outline: none;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.band__scale {
+  position: relative;
+  height: 6px;
+}
+
+.band__bar {
+  width: 100%;
+  height: 0;
+  margin: 3px 0;
+
+  border-top: $border_button_light;
+
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: auto;
+    height: 0;
+
+    top: -2px;
+    left: 13%;
+    right: 34%;
+
+    border-top: $border_button_light;
+  }
+}
+
+.band__toggle {
+  position: absolute;
+  top: 8%;
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 18px;
+  padding: 6px;
+
+  border-radius: 50%;
+  background-color: $light_olive_gray;
+  background-clip: content-box;
+
+  cursor: pointer;
+
+  &--min {
+    left: 9%;
+  }
+
+  &--max {
+    right: 30%;
+  }
+
+  @include only_desktop {
+    &:hover,
+    &:focus {
+      background-color: $signal_black;
+    }
+
+    &:active {
+      background-color: $pale_brown;
+    }
+  }
+}
