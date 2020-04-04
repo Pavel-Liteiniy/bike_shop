@@ -17,7 +17,7 @@
 
     width: 98%;
     min-height: 60px;
-    padding: 15px 0;
+    padding: 17px 0 14px;
     margin: 0 auto;
 
     border-top: $border_button_light;
@@ -29,6 +29,10 @@
 
     border-top: $border_button_dark;
     border-bottom: $border_button_dark;
+  }
+
+  &--catalogue {
+    text-transform: initial;
   }
 
   @include for_mobile {
@@ -115,7 +119,6 @@
   @include link_default_remove;
 
   display: block;
-
   margin: 0 15px 0 0;
   padding: 5px;
 
@@ -126,6 +129,10 @@
     padding: 5px 0;
 
     letter-spacing: 0.4px;
+  }
+
+  &--catalogue {
+    margin: 0 20px 0 0;
   }
 
   @include for_mobile {
