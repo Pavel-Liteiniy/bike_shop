@@ -1,0 +1,21 @@
+.catalogue__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include for_mobile {
+    position: relative;
+  }
+}
+
+.catalogue__inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  justify-content: space-between;
+  align-items: stretch;
+}
