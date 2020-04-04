@@ -1,0 +1,164 @@
+.pagination {
+  @include font_character(18px, 18px, $beaver);
+
+  width: 100%;
+
+  font-family: $font_family_serif;
+  letter-spacing: 0.04em;
+  text-align: center;
+
+  @include for_mobile {
+    @include font_character(22px, 22px, $beaver);
+  }
+
+  a {
+    @include link_default_remove;
+
+    display: block;
+  }
+
+  a:not([href]):not(.pagination__button) {
+    color: $juicy_chestnut_craiola;
+  }
+}
+
+.pagination__inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+  padding: 70px 8.93% 80px;
+
+  text-align: center;
+
+  @include for_mobile {
+    padding: 29px 0 60px;
+
+    justify-content: space-between;
+  }
+}
+
+.pagination__link {
+  padding: 0 4px;
+
+  transition-duration: 100ms;
+
+  @include for_mobile {
+    margin: 0 auto;
+  }
+
+  @include only_desktop {
+    &:nth-of-type(6),
+    &:nth-of-type(7) {
+      display: none;
+    }
+
+    &:hover:not(.pagination__link--current),
+    &:focus:not(.pagination__link--current) {
+      outline: none;
+      opacity: 0.6;
+      transform: translateY(-5px);
+    }
+
+    &:active:not(.pagination__link--current) {
+      outline: none;
+      opacity: 0.3;
+      transform: translateY(-8px);
+    }
+  }
+}
+
+.pagination__button {
+  width: 18px;
+  height: 18px;
+
+  margin: 0 11px;
+
+  position: relative;
+
+  @include for_mobile {
+    height: 22px;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    transform: translateY(-50%);
+    transform-origin: 0 50%;
+    width: 9px;
+    height: 1px;
+
+    background-color: currentColor;
+
+    @include for_mobile {
+      width: 12px;
+      height: 2px;
+
+      transform-origin: 1px 50%;
+    }
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+
+    @include for_mobile {
+      transform: rotate(-55deg);
+    }
+  }
+
+  &::after {
+    transform: rotate(45deg);
+
+    @include for_mobile {
+      transform: rotate(55deg);
+    }
+  }
+
+  &--previous {
+    @include for_mobile {
+      margin: 0 auto 0 8px;
+    }
+  }
+
+  &--next {
+    transform: scale(-1, 1);
+
+    @include for_mobile {
+      margin: 0 10px 0 auto;
+    }
+  }
+
+  @include only_desktop {
+    &:hover:not(.pagination__button--off),
+    &:focus:not(.pagination__button--off) {
+      outline: none;
+      opacity: 0.6;
+    }
+
+    &:active:not(.pagination__button--off) {
+      outline: none;
+      opacity: 0.3;
+    }
+  }
+}
+
+.pagination__filler {
+  display: block;
+  width: auto;
+  height: 1px;
+
+  flex-grow: 1;
+
+  background-color: $beaver;
+
+  @include for_mobile {
+    display: none;
+  }
+}
