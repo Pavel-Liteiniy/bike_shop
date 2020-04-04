@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body>
+<body class="page">
   <header class="header header--light">
-    <div class="header__inner header__inner--no-js inner">
+    <div class="header__inner header__inner--catalogue header__inner--no-js inner">
       <button class="header__button header__button--open" type="button" aria-label="Открыть меню"></button>
       <a class="header__logo-link header__logo-link--light" href="main.html" aria-label="Главная страница">
         <svg class="header__logo-image header__logo-image" width="184" height="30" viewBox="0 0 184 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,14 +22,14 @@
       <div class="header__wrapper header__wrapper--open">
         <button class="header__button header__button--close" type="button" aria-label="Закрыть меню"></button>
         <nav class="header__nav nav">
-          <div class="nav__inner inner">
+          <div class="nav__inner nav__inner--catalogue inner">
             <ul class="nav__list nav__list--categories">
-              <li class="nav__item"><a class="nav__link nav__link--current">Велосипеды</a></li>
-              <li class="nav__item"><a class="nav__link" href="card.html">Аксессуары</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">Запчасти</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">Мастерская</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">Доставка и оплата</a></li>
-              <li class="nav__item"><a class="nav__link" href="#">Контакты</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--catalogue nav__link--current">Велосипеды</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--catalogue" href="card.html">Аксессуары</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--catalogue" href="#">Запчасти</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--catalogue" href="#">Мастерская</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--catalogue" href="#">Доставка и оплата</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--catalogue" href="#">Контакты</a></li>
             </ul>
             <ul class="nav__list nav__list--user-menu">
               <li class="nav__item nav__item--account">
@@ -49,9 +49,481 @@
       </ul>
     </div>
   </header>
-  <main></main>
+  <main class="catalogue">
+    <div class="catalogue__wrapper">
+      <h1 class="visually_hidden">Каталог товаров</h1>
+      <section class="catalogue__item filters">
+        <div class="filters__inner inner">
+          <h2 class="visually_hidden">Настройки для просмотра товаров по каталогу</h2>
+          <button class="filters__open" type="button">Фильтры <span class="filters__checked">(3)</span></button>
+          <button class="filters__reset" type="reset" form="settings_form">Сбросить фильтры</button>
+          <form class="filters__form" method="get" action="https://echo.htmlacademy.ru">
+            <div class="filters__range">
+              <h3 class="visually_hidden">Сортировка товаров</h3>
+              <select class="filters__list" name="range_by" id="range_by">
+                <option selected class="filters__item" value="range_by_popular">По популярности</option>
+                <option class="filters__item" value="range_by_cost">По стоимости</option>
+                <option class="filters__item" value="range_by_cost">По рейтингу</option>
+              </select>
+            </div>
+            <div class="filters__count">
+              <h3 class="visually_hidden">Количество отображаемых товаров на странице</h3>
+              <div class="filters__describe">
+                <p>Показывать по</p>
+              </div>
+              <input class="visually_hidden" type="radio" checked name="visibility_count" value="12" id="count_12" aria-label="Показывать по 12 товаров на странице">
+              <label for="count_12">12</label>
+              <input class="visually_hidden" type="radio" name="visibility_count" value="24" id="count_24" aria-label="Показывать по 24 товара на странице">
+              <label for="count_24">24</label>
+              <input class="visually_hidden" type="radio" name="visibility_count" value="0" id="count_0" aria-label="Показать весь товар на одной странице">
+              <label for="count_0">все</label>
+            </div>
+            <div class="filters__view">
+              <h3 class="visually_hidden">Вид отображаемых товаров</h3>
+              <input class="visually_hidden" type="radio" checked name="visibility_grid" value="block" id="grid_block">
+              <label class="filters__visibility filters__visibility--block" for="grid_block" aria-label="Отображать товары блоками">
+                <div class="filters__icon-wrapper">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5 0H0V5H5V0ZM5 6H0V11H5V6ZM6 6H11V11H6V6ZM11 0H6V5H11V0Z" fill="currentColor" />
+                  </svg>
+                </div>
+              </label>
+              <input class="visually_hidden" type="radio" name="visibility_grid" value="inline" id="grid_inline">
+              <label class="filters__visibility filters__visibility--inline" for="grid_inline" aria-label="Отображать товары строками">
+                <div class="filters__icon-wrapper">
+                  <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H1V1H0V0ZM12 0H3V1H12V0ZM12 5H3V6H12V5ZM3 10H12V11H3V10ZM1 5H0V6H1V5ZM0 10H1V11H0V10Z" fill="currentColor" />
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </form>
+        </div>
+      </section>
+      <div class="catalogue__inner">
+        <section class="catalogue__item settings settings--hide settings--no-js">
+          <div class="settings__inner inner">
+            <h2 class="visually_hidden">Настройки фильтров для подбора товара из каталога</h2>
+            <form class="settings__form" action="https://echo.htmlacademy.ru" method="get" id="settings_form">
+              <div class="settings__button-wrapper">
+                <button class="settings__button-reset" type="reset">Сбросить фильтры <span class="settings__checked">(3)</span></button>
+                <button class="settings__button-close" type="button" aria-label="Закрыть окно с фильтрами"></button>
+              </div>
+              <div class="settings__range">
+                <h3 class="visually_hidden">Характеристики товаров</h3>
+                <select class="settings__list" name="range_by" id="range_by_mobile">
+                  <option selected class="settings__item" value="range_by_popular">По популярности</option>
+                  <option class="settings__item" value="range_by_cost">По стоимости</option>
+                  <option class="settings__item" value="range_by_cost">По рейтингу</option>
+                </select>
+              </div>
+              <div class="settings__band band">
+                <P class="visually_hidden">Диапазон стоимости</P>
+                <div class="band__controls">
+                  <input type="text" class="band__min" name="band-min" id="band-min" value="28 000" aria-label="Минимальная стоимость товара в результатах поиска">
+                  <input type="text" class="band__max" name="band-max" id="band-max" value="180 000" aria-label="Максимальная стоимость товара в результатах поиска">
+                </div>
+                <div class="band__scale">
+                  <div class="band__bar"></div>
+                  <div class="band__toggle band__toggle--min"></div>
+                  <div class="band__toggle band__toggle--max"></div>
+                </div>
+              </div>
+              <div class="settings__group settings__group--electro">
+                <fieldset>
+                  <legend>Электровелосипед</legend>
+                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Электровелосипед"></button>
+                  <div class="settings__wrapper settings__wrapper--electro">
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="electro-yes" value="yes" id="electro-yes" aria-label="Искать среди электровелосипедов">
+                    <label for="electro-yes" class="settings__description settings__description--electro-yes">Да</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="electro-no" value="yes" id="electro-no" aria-label="Исключить электровелосипеды из результатов поиска">
+                    <label for="electro-no" class="settings__description settings__description--electro-no">Нет</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="settings__group settings__group--producer">
+                <fieldset>
+                  <legend>Производитель</legend>
+                  <button type="button" class="settings__button settings__button--open" aria-label="Развернуть подробные настройки фильтра Производитель"></button>
+                  <div class="settings__wrapper settings__wrapper--hide">
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="country-usa" value="usa" id="country-usa" aria-label="Искать среди велосипедов произведенных в США">
+                    <label for="country-usa" class="settings__description">США</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="country-china" value="china" id="country-china" aria-label="Искать среди велосипедов произведенных в Китае">
+                    <label for="country-china" class="settings__description">Китай</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="country-hungary" value="hungary" id="country-hungary" aria-label="Искать среди велосипедов произведенных в Венгрии">
+                    <label for="country-hungary" class="settings__description">Венгрия</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="settings__group settings__group--material">
+                <fieldset>
+                  <legend>Материал рамы</legend>
+                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Материал рамы"></button>
+                  <div class="settings__wrapper settings__wrapper--material">
+                    <input class="visually_hidden settings__checkbox" type="checkbox" checked="checked" name="material-steel" value="steel" id="material-steel" aria-label="Искать велосипеды со стальной рамой">
+                    <label for="material-steel" class="settings__description">Сталь</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="material-carbon" value="carbon" id="material-carbon" aria-label="Искать велосипеды с карбоновой рамой">
+                    <label for="material-carbon" class="settings__description">Карбон</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="settings__group settings__group--color">
+                <fieldset>
+                  <legend>Цвет</legend>
+                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Цвет"></button>
+                  <div class="settings__wrapper">
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="color-black" value="black" id="color-black" aria-label="Искать черный велосипед">
+                    <label for="color-black" class="settings__description settings__description--color-black">Черный</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="color-brown" value="brown" id="color-brown" aria-label="Искать коричневый велосипед">
+                    <label for="color-brown" class="settings__description">Коричневый</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="color-red" value="red" id="color-red" aria-label="Искать красный велосипед">
+                    <label for="color-red" class="settings__description">Красный</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="color-blue" value="blue" id="color-blue" aria-label="Искать синий велосипед">
+                    <label for="color-blue" class="settings__description">Голубой</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="color-khaki" value="khaki" id="color-khaki" aria-label="Искать хаки велосипед">
+                    <label for="color-khaki" class="settings__description">Хаки</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="settings__group settings__group--size">
+                <fieldset>
+                  <legend>Размер</legend>
+                  <button type="button" class="settings__button settings__button--open" aria-label="Развернуть подробные настройки фильтра Размер"></button>
+                  <div class="settings__wrapper settings__wrapper--hide">
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="size-s" value="s" id="size-s" aria-label="Искать маленький велосипед">
+                    <label for="size-s" class="settings__description">Детский</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="size-m" value="s" id="size-m" aria-label="Искать средний велосипед">
+                    <label for="size-m" class="settings__description">Средний</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="size-l" value="s" id="size-l" aria-label="Искать большой велосипед">
+                    <label for="size-l" class="settings__description">Взрослый</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="settings__group settings__group--wheels">
+                <fieldset>
+                  <legend>Колеса</legend>
+                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Колеса"></button>
+                  <div class="settings__wrapper">
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="wheel-20inch" value="20" id="wheel-20inch" aria-label="Искать велосипеды с колесами диаметром 20 дюймов">
+                    <label for="wheel-20inch" class="settings__description settings__description--wheels-20">20"</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="wheel-22inch" value="22" id="wheel-22inch" aria-label="Искать велосипеды с колесами диаметром 22 дюймов">
+                    <label for="wheel-22inch" class="settings__description">22"</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="wheel-24inch" value="24" id="wheel-24inch" aria-label="Искать велосипеды с колесами диаметром 24 дюймов">
+                    <label for="wheel-24inch" class="settings__description">24"</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="wheel-26inch" value="26" id="wheel-26inch" aria-label="Искать велосипеды с колесами диаметром 26 дюймов">
+                    <label for="wheel-26inch" class="settings__description">26"</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="settings__group settings__group--speeds">
+                <fieldset>
+                  <legend>Кол-во скоростей</legend>
+                  <button type="button" class="settings__button settings__button--open" aria-label="Развернуть подробные настройки фильтра Кол-во скоростей"></button>
+                  <div class="settings__wrapper settings__wrapper--hide">
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="gears-10" value="10" id="gears-10" aria-label="Искать велосипед с 10 скоростями">
+                    <label for="gears-10" class="settings__description">10</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="gears-12" value="12" id="gears-12" aria-label="Искать велосипед с 12 скоростями">
+                    <label for="gears-12" class="settings__description">12</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="gears-14" value="14" id="gears-14" aria-label="Искать велосипед с 14 скоростями">
+                    <label for="gears-14" class="settings__description">14</label>
+                    <input class="visually_hidden settings__checkbox" type="checkbox" name="gears-16" value="16" id="gears-16" aria-label="Искать велосипед с 16 скоростями">
+                    <label for="gears-16" class="settings__description">16</label>
+                  </div>
+                </fieldset>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="catalogue__item panel">
+          <div class="panel__inner inner">
+            <h2>Ассортимент велосипедов</h2>
+            <div class="panel__item product">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_1@2x.png 2x, img/bike_1@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_1@2x.png 2x, img/bike_1@1x.png 1x">
+                  <img src="img/bike_1@1x.png" srcset="img/bike_1@2x.png 2x" width="263" height="116" alt="Фото велосипеда NEUZER Chopper Apocalypse" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>NEUZER Chopper Apocalypse</p>
+                </div>
+                <div class="product__description">
+                  <p>24”, сталь Hi-Ten</p>
+                  <p>Венгрия</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">75 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel__item product">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_2@2x.png 2x, img/bike_2@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_2@2x.png 2x, img/bike_2@1x.png 1x">
+                  <img src="img/bike_2@1x.png" srcset="img/bike_2@2x.png 2x" width="260" height="128" alt="Фото велосипеда Schwinn Stingray OCC" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>Schwinn<br>Stingray OCC</p>
+                </div>
+                <div class="product__description">
+                  <p>20”+24”, сталь</p>
+                  <p>США</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">34 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel__item product product--harley">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_3@2x.png 2x, img/bike_3@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_3@2x.png 2x, img/bike_3@1x.png 1x">
+                  <img src="img/bike_3@1x.png" srcset="img/bike_3@2x.png 2x" width="258" height="162" alt="Фото велосипеда 	Harley<br>Davidson" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>Harley<br>Davidson</p>
+                </div>
+                <div class="product__description">
+                  <p>20”, сталь</p>
+                  <p>Китай</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">23 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel__item product product--micargi">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_4@2x.png 2x, img/bike_4@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_4@2x.png 2x, img/bike_4@1x.png 1x">
+                  <img src="img/bike_4@1x.png" srcset="img/bike_4@2x.png 2x" width="275" height="138" alt="Фото велосипеда Micargi Cyclone Electric" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>Micargi Cyclone Electric</p>
+                </div>
+                <div class="product__description">
+                  <p>26”, 500W, 5 скоростей, сталь</p>
+                  <p>США</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">154 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel__item product product--x-front">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_5@2x.png 2x, img/bike_5@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_5@2x.png 2x, img/bike_5@1x.png 1x">
+                  <img src="img/bike_5@1x.png" srcset="img/bike_5@2x.png 2x" width="263" height="154" alt="Фото велосипеда X-Front Snowmobile" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>X-Front<br>Snowmobile</p>
+                </div>
+                <div class="product__description">
+                  <p>24”, сталь</p>
+                  <p>Китай</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">42 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel__item product">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_6@2x.png 2x, img/bike_6@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_6@2x.png 2x, img/bike_6@1x.png 1x">
+                  <img src="img/bike_6@1x.png" srcset="img/bike_6@2x.png 2x" width="284" height="142" alt="Фото велосипеда 	2Fast4You Chopper" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>2Fast4You<br>Chopper</p>
+                </div>
+                <div class="product__description">
+                  <p>24”, сталь </p>
+                  <p>Венгрия</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">38 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel__item product">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_7@2x.png 2x, img/bike_7@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_7@2x.png 2x, img/bike_7@1x.png 1x">
+                  <img src="img/bike_7@1x.png" srcset="img/bike_7@2x.png 2x" width="270" height="142" alt="Фото велосипеда NEUZER Chopper Apocalypse" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>NEUZER Chopper Apocalypse</p>
+                </div>
+                <div class="product__description">
+                  <p>24”, сталь Hi-Ten </p>
+                  <p>Венгрия</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">75 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel__item product">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_8@2x.png 2x, img/bike_8@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_8@2x.png 2x, img/bike_8@1x.png 1x">
+                  <img src="img/bike_8@1x.png" srcset="img/bike_8@2x.png 2x" width="275" height="147" alt="Фото велосипеда Schwinn Stingray OCC" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>Schwinn<br>Stingray OCC</p>
+                </div>
+                <div class="product__description">
+                  <p>20”+24”, сталь</p>
+                  <p>США</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">34 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel__item product">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_9@2x.png 2x, img/bike_9@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_9@2x.png 2x, img/bike_9@1x.png 1x">
+                  <img src="img/bike_9@1x.png" srcset="img/bike_9@2x.png 2x" width="263" height="157" alt="Фото велосипеда Harley<br>Davidson" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>Harley<br>Davidson</p>
+                </div>
+                <div class="product__description">
+                  <p>20”, сталь</p>
+                  <p>Китай</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">23 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel__item product product--micargi">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_10@2x.png 2x, img/bike_10@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_10@2x.png 2x, img/bike_10@1x.png 1x">
+                  <img src="img/bike_10@1x.png" srcset="img/bike_10@2x.png 2x" width="273" height="167" alt="Фото велосипеда Micargi Cyclone Electric" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>Micargi Cyclone Electric</p>
+                </div>
+                <div class="product__description">
+                  <p>26”, 500W, 5 скоростей, сталь</p>
+                  <p>США</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">154 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel__item product product--x-front">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_11@2x.png 2x, img/bike_11@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_11@2x.png 2x, img/bike_11@1x.png 1x">
+                  <img src="img/bike_11@1x.png" srcset="img/bike_11@2x.png 2x" width="284" height="175" alt="Фото велосипеда X-Front Snowmobile" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>X-Front<br>Snowmobile</p>
+                </div>
+                <div class="product__description">
+                  <p>24”, сталь</p>
+                  <p>Китай</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">42 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel__item product">
+              <div class="product__image">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/bike_12@2x.png 2x, img/bike_12@1x.png 1x">
+                  <source media="(min-width: 768px)" srcset="img/bike_12@2x.png 2x, img/bike_12@1x.png 1x">
+                  <img src="img/bike_12@1x.png" srcset="img/bike_12@2x.png 2x" width="284" height="157" alt="Фото велосипеда 2Fast4You Chopper" />
+                </picture>
+                <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
+              </div>
+              <div class="product__content">
+                <div class="product__name">
+                  <p>2Fast4You<br>Chopper</p>
+                </div>
+                <div class="product__description">
+                  <p>24”, сталь </p>
+                  <p>Венгрия</p>
+                </div>
+                <div class="product__price">
+                  <a class="product__price-link" href="#">38 000 ‎₽</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="catalogue__item pagination">
+        <h2 class="visually_hidden">Страницы каталога</h2>
+        <div class="pagination__inner inner">
+          <div class="pagination__filler"></div>
+          <a class="pagination__button pagination__button--previous pagination__button--off" aria-label="Перейти на предыдущую страницу"></a>
+          <a class="pagination__link pagination__link--current" aria-label="Текущая страница 1">1</a>
+          <a class="pagination__link" href="#" aria-label="Перейти на 2 страницу">2</a>
+          <a class="pagination__link" href="#" aria-label="Перейти на 3 страницу">3</a>
+          <a class="pagination__link" href="#" aria-label="Перейти к следующим страницам">...</a>
+          <a class="pagination__link" href="#" aria-label="Перейти на 24 страницу">24</a>
+          <a class="pagination__link" href="#" aria-label="Перейти на 25 страницу">25</a>
+          <a class="pagination__link" href="#" aria-label="Перейти на 26 страницу">26</a>
+          <a class="pagination__button pagination__button--next" href="#" aria-label="Перейти на следующую страницу"></a>
+          <div class="pagination__filler"></div>
+        </div>
+      </section>
+    </div>
+  </main>
   <footer class="footer  footer--light">
-    <div class="footer__inner inner">
+    <div class="footer__inner footer__inner--light inner">
       <nav class="footer__nav nav nav--bottom">
         <div class="nav__inner nav__inner--bottom inner">
           <ul class="nav__list nav__list--bottom">
