@@ -3,19 +3,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-
-  &:first-of-type {
-    picture {
-      margin: auto auto 17%;
-    }
-  }
-
-  &:last-of-type {
-    picture {
-      margin: auto auto 14%;
-    }
-  }
 }
 
 .product__image {
@@ -62,6 +49,46 @@
   }
 }
 
+.product--micargi {
+  picture {
+    margin: auto auto 17%;
+
+    @include for_mobile {
+      margin: auto auto 9.5%;
+    }
+  }
+}
+
+.product--x-front {
+  picture {
+    margin: auto auto 14%;
+
+    @include for_mobile {
+      margin: auto auto 7.5%;
+    }
+  }
+}
+
+.product--harley {
+  picture {
+    @include for_mobile {
+      margin: auto auto 5%;
+    }
+  }
+}
+
+.product--propalm {
+  picture {
+    margin: auto auto 47%;
+  }
+}
+
+.product--brooks {
+  picture {
+    margin: auto auto 18%;
+  }
+}
+
 .product__cart {
   display: block;
   width: 50px;
@@ -105,8 +132,10 @@
 }
 
 .product__content {
-  width: 165px;
+  width: 220px;
   margin: 0 auto;
+
+  text-align: center;
 }
 
 .product__name {
