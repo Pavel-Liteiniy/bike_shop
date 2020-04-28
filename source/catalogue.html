@@ -39,7 +39,8 @@
             </ul>
             <ul class="nav__list nav__list--purchase">
               <li class="nav__item nav__item--search"><a class="nav__link nav__link--search" href="#">Поиск</a></li>
-              <li class="nav__item nav__item--cart"><a class="nav__link nav__link--cart" href="#">Корзина (1)</a></li>
+              <li class="nav__item nav__item--cart"><a class="nav__link nav__link--cart" href="#" aria-label="Корзина"><span></span></a></li>
+              <li class="nav__item nav__item--match"><a class="nav__link nav__link--match-off" href="#" aria-label="Сравнение товаров"><span></span></a></li>
             </ul>
           </div>
         </nav>
@@ -125,14 +126,14 @@
                   <div class="band__toggle band__toggle--max"></div>
                 </div>
               </div>
-              <div class="settings__group settings__group--electro">
+              <div class="c settings__group--electro">
                 <fieldset>
                   <legend>Электровелосипед</legend>
-                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Электровелосипед"></button>
-                  <div class="settings__wrapper settings__wrapper--electro">
-                    <input class="visually_hidden settings__checkbox" type="checkbox" name="electro-yes" value="yes" id="electro-yes" aria-label="Искать среди электровелосипедов">
+                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Электровелосипед" data-button-filters='electro'></button>
+                  <div class="settings__wrapper settings__wrapper--electro" data-wrapper-filters='electro'>
+                    <input class="visually_hidden settings__checkbox" type="radio" name="electro-radio" value="electro-yes" id="electro-yes" aria-label="Искать среди электровелосипедов">
                     <label for="electro-yes" class="settings__description settings__description--electro-yes">Да</label>
-                    <input class="visually_hidden settings__checkbox" type="checkbox" name="electro-no" value="yes" id="electro-no" aria-label="Исключить электровелосипеды из результатов поиска">
+                    <input class="visually_hidden settings__checkbox" type="radio" name="electro-radio" value="electro-no" id="electro-no" aria-label="Исключить электровелосипеды из результатов поиска">
                     <label for="electro-no" class="settings__description settings__description--electro-no">Нет</label>
                   </div>
                 </fieldset>
@@ -140,8 +141,8 @@
               <div class="settings__group settings__group--producer">
                 <fieldset>
                   <legend>Производитель</legend>
-                  <button type="button" class="settings__button settings__button--open" aria-label="Развернуть подробные настройки фильтра Производитель"></button>
-                  <div class="settings__wrapper settings__wrapper--hide">
+                  <button type="button" class="settings__button settings__button--open" aria-label="Развернуть подробные настройки фильтра Производитель" data-button-filters='producer'></button>
+                  <div class="settings__wrapper settings__wrapper--hide" data-wrapper-filters='producer'>
                     <input class="visually_hidden settings__checkbox" type="checkbox" name="country-usa" value="usa" id="country-usa" aria-label="Искать среди велосипедов произведенных в США">
                     <label for="country-usa" class="settings__description">США</label>
                     <input class="visually_hidden settings__checkbox" type="checkbox" name="country-china" value="china" id="country-china" aria-label="Искать среди велосипедов произведенных в Китае">
@@ -154,8 +155,8 @@
               <div class="settings__group settings__group--material">
                 <fieldset>
                   <legend>Материал рамы</legend>
-                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Материал рамы"></button>
-                  <div class="settings__wrapper settings__wrapper--material">
+                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Материал рамы" data-button-filters='material'></button>
+                  <div class="settings__wrapper settings__wrapper--material" data-wrapper-filters='material'>
                     <input class="visually_hidden settings__checkbox" type="checkbox" checked="checked" name="material-steel" value="steel" id="material-steel" aria-label="Искать велосипеды со стальной рамой">
                     <label for="material-steel" class="settings__description">Сталь</label>
                     <input class="visually_hidden settings__checkbox" type="checkbox" name="material-carbon" value="carbon" id="material-carbon" aria-label="Искать велосипеды с карбоновой рамой">
@@ -166,8 +167,8 @@
               <div class="settings__group settings__group--color">
                 <fieldset>
                   <legend>Цвет</legend>
-                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Цвет"></button>
-                  <div class="settings__wrapper">
+                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Цвет" data-button-filters='color'></button>
+                  <div class="settings__wrapper" data-wrapper-filters='color'>
                     <input class="visually_hidden settings__checkbox" type="checkbox" name="color-black" value="black" id="color-black" aria-label="Искать черный велосипед">
                     <label for="color-black" class="settings__description settings__description--color-black">Черный</label>
                     <input class="visually_hidden settings__checkbox" type="checkbox" name="color-brown" value="brown" id="color-brown" aria-label="Искать коричневый велосипед">
@@ -184,8 +185,8 @@
               <div class="settings__group settings__group--size">
                 <fieldset>
                   <legend>Размер</legend>
-                  <button type="button" class="settings__button settings__button--open" aria-label="Развернуть подробные настройки фильтра Размер"></button>
-                  <div class="settings__wrapper settings__wrapper--hide">
+                  <button type="button" class="settings__button settings__button--open" aria-label="Развернуть подробные настройки фильтра Размер" data-button-filters='size'></button>
+                  <div class="settings__wrapper settings__wrapper--hide" data-wrapper-filters='size'>
                     <input class="visually_hidden settings__checkbox" type="checkbox" name="size-s" value="s" id="size-s" aria-label="Искать маленький велосипед">
                     <label for="size-s" class="settings__description">Детский</label>
                     <input class="visually_hidden settings__checkbox" type="checkbox" name="size-m" value="s" id="size-m" aria-label="Искать средний велосипед">
@@ -198,8 +199,8 @@
               <div class="settings__group settings__group--wheels">
                 <fieldset>
                   <legend>Колеса</legend>
-                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Колеса"></button>
-                  <div class="settings__wrapper">
+                  <button type="button" class="settings__button" aria-label="Развернуть подробные настройки фильтра Колеса" data-button-filters='wheels'></button>
+                  <div class="settings__wrapper" data-wrapper-filters='wheels'>
                     <input class="visually_hidden settings__checkbox" type="checkbox" name="wheel-20inch" value="20" id="wheel-20inch" aria-label="Искать велосипеды с колесами диаметром 20 дюймов">
                     <label for="wheel-20inch" class="settings__description settings__description--wheels-20">20"</label>
                     <input class="visually_hidden settings__checkbox" type="checkbox" name="wheel-22inch" value="22" id="wheel-22inch" aria-label="Искать велосипеды с колесами диаметром 22 дюймов">
@@ -214,8 +215,8 @@
               <div class="settings__group settings__group--speeds">
                 <fieldset>
                   <legend>Кол-во скоростей</legend>
-                  <button type="button" class="settings__button settings__button--open" aria-label="Развернуть подробные настройки фильтра Кол-во скоростей"></button>
-                  <div class="settings__wrapper settings__wrapper--hide">
+                  <button type="button" class="settings__button settings__button--open" aria-label="Развернуть подробные настройки фильтра Кол-во скоростей" data-button-filters='speeds'></button>
+                  <div class="settings__wrapper settings__wrapper--hide" data-wrapper-filters='speeds'>
                     <input class="visually_hidden settings__checkbox" type="checkbox" name="gears-10" value="10" id="gears-10" aria-label="Искать велосипед с 10 скоростями">
                     <label for="gears-10" class="settings__description">10</label>
                     <input class="visually_hidden settings__checkbox" type="checkbox" name="gears-12" value="12" id="gears-12" aria-label="Искать велосипед с 12 скоростями">
@@ -240,6 +241,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_1@2x.png 2x, img/bike_1@1x.png 1x">
                   <img src="img/bike_1@1x.png" srcset="img/bike_1@2x.png 2x" width="263" height="116" alt="Велосипед NEUZER Chopper Apocalypse" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -262,6 +268,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_2@2x.png 2x, img/bike_2@1x.png 1x">
                   <img src="img/bike_2@1x.png" srcset="img/bike_2@2x.png 2x" width="260" height="128" alt="Велосипед Schwinn Stingray OCC" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -284,6 +295,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_3@2x.png 2x, img/bike_3@1x.png 1x">
                   <img src="img/bike_3@1x.png" srcset="img/bike_3@2x.png 2x" width="258" height="162" alt="Велосипед 	Harley<br>Davidson" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -306,6 +322,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_4@2x.png 2x, img/bike_4@1x.png 1x">
                   <img src="img/bike_4@1x.png" srcset="img/bike_4@2x.png 2x" width="275" height="138" alt="Велосипед Micargi Cyclone Electric" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -328,6 +349,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_5@2x.png 2x, img/bike_5@1x.png 1x">
                   <img src="img/bike_5@1x.png" srcset="img/bike_5@2x.png 2x" width="263" height="154" alt="Велосипед X-Front Snowmobile" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -350,6 +376,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_6@2x.png 2x, img/bike_6@1x.png 1x">
                   <img src="img/bike_6@1x.png" srcset="img/bike_6@2x.png 2x" width="284" height="142" alt="Велосипед 	2Fast4You Chopper" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -372,6 +403,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_7@2x.png 2x, img/bike_7@1x.png 1x">
                   <img src="img/bike_7@1x.png" srcset="img/bike_7@2x.png 2x" width="270" height="142" alt="Велосипед NEUZER Chopper Apocalypse" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -394,6 +430,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_8@2x.png 2x, img/bike_8@1x.png 1x">
                   <img src="img/bike_8@1x.png" srcset="img/bike_8@2x.png 2x" width="275" height="147" alt="Велосипед Schwinn Stingray OCC" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -416,6 +457,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_9@2x.png 2x, img/bike_9@1x.png 1x">
                   <img src="img/bike_9@1x.png" srcset="img/bike_9@2x.png 2x" width="263" height="157" alt="Велосипед Harley<br>Davidson" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -438,6 +484,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_10@2x.png 2x, img/bike_10@1x.png 1x">
                   <img src="img/bike_10@1x.png" srcset="img/bike_10@2x.png 2x" width="273" height="167" alt="Велосипед Micargi Cyclone Electric" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -460,6 +511,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_11@2x.png 2x, img/bike_11@1x.png 1x">
                   <img src="img/bike_11@1x.png" srcset="img/bike_11@2x.png 2x" width="284" height="175" alt="Велосипед X-Front Snowmobile" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -482,6 +538,11 @@
                   <source media="(min-width: 768px)" srcset="img/bike_12@2x.png 2x, img/bike_12@1x.png 1x">
                   <img src="img/bike_12@1x.png" srcset="img/bike_12@2x.png 2x" width="284" height="157" alt="Велосипед 2Fast4You Chopper" />
                 </picture>
+                <a href="#" class="product__match" aria-label="Добавить к сравнению">
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.857143C0 1.33053 0.383756 1.71429 0.857143 1.71429H14.5714C15.0448 1.71429 15.4286 1.33053 15.4286 0.857143C15.4286 0.383756 15.0448 0 14.5714 0H0.857144C0.383757 0 0 0.383756 0 0.857143ZM14.5714 6.85714C15.0448 6.85714 15.4286 6.47339 15.4286 6C15.4286 5.52661 15.0448 5.14286 14.5714 5.14286H0.857144C0.383757 5.14286 0 5.52661 0 6C0 6.47339 0.383756 6.85714 0.857143 6.85714H14.5714ZM14.5714 12C15.0448 12 15.4286 11.6162 15.4286 11.1429C15.4286 10.6695 15.0448 10.2857 14.5714 10.2857H0.857144C0.383757 10.2857 0 10.6695 0 11.1429C0 11.6162 0.383756 12 0.857143 12H14.5714ZM24.8571 6C24.8571 6.47339 24.4734 6.85714 24 6.85714H22.2857V8.57143C22.2857 9.04482 21.902 9.42857 21.4286 9.42857C20.9552 9.42857 20.5714 9.04482 20.5714 8.57143V6.85714H18.8571C18.3838 6.85714 18 6.47339 18 6C18 5.52661 18.3838 5.14286 18.8571 5.14286H20.5714V3.42857C20.5714 2.95518 20.9552 2.57143 21.4286 2.57143C21.902 2.57143 22.2857 2.95518 22.2857 3.42857V5.14286H24C24.4734 5.14286 24.8571 5.52661 24.8571 6Z" fill="currentColor" />
+                  </svg>
+                </a>
                 <a href="#" class="product__cart" aria-label="Добавить в корзину"></a>
               </div>
               <div class="product__content">
@@ -534,7 +595,7 @@
           </ul>
         </div>
       </nav>
-      <div class="footer__wrapper">
+      <div class="footer__wrapper footer__wrapper--light">
         <div class="footer__socials socials">
           <ul class="socials__list">
             <li class="socials__item">
