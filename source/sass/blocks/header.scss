@@ -20,8 +20,7 @@
   justify-content: space-between;
   align-items: center;
 
-
-  padding: 35px 21px 35px 53px;
+  padding: 33px 21px 33px 53px;
 
   position: absolute;
   top: 0;
@@ -36,6 +35,12 @@
     padding: 34px 21px 34px 53px;
   }
 
+  &--card {
+    position: static;
+
+    padding: 34px 35px 38px 53px;
+  }
+
   @include for_mobile {
     min-height: 54px;
 
@@ -43,6 +48,12 @@
 
     &--catalogue {
       position: static;
+    }
+
+    &--card {
+      @include for_mobile {
+        padding: 12px 10px 15px 15px;
+      }
     }
 
     &--no-js {
@@ -101,6 +112,8 @@
 }
 
 .header__logo-link {
+  margin: 0 20px 0 0;
+
   transition-duration: 100ms;
 
   @include for_mobile {
