@@ -1,0 +1,172 @@
+.product-summary__inner {
+  margin: 0 auto;
+  padding: 0 11.27% 0 9%;
+
+  @include for_mobile {
+    padding: 0;
+  }
+}
+
+.product-summary__tabs-list {
+  @include list_default_remove;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  justify-content: stretch;
+  align-items: stretch;
+
+  @include for_mobile {
+    display: none;
+  }
+}
+
+.product-summary__tabs-item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 25%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: stretch;
+  align-items: stretch;
+
+  &:not(:first-child) {
+    margin: 0 0 0 -1px;
+  }
+
+  label {
+    @include font_character(24px, 30px, $light_olive_gray);
+
+    display: block;
+    width: 100%;
+    min-height: 60px;
+    padding: 14px;
+
+    font-family: $font_family_serif;
+    text-transform: uppercase;
+    text-align: center;
+
+    border: $border_button_light;
+    border-bottom: none;
+
+    opacity: 0.3;
+  }
+
+  input:checked + label {
+    opacity: 1;
+    z-index: 2;
+
+    background-color: $pearl_white;
+  }
+
+  @include only_desktop {
+    input:not(:checked) + label:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.product-summary__content-list {
+  @include font_character(22px, 30px, $light_olive_gray);
+
+  margin: -2px 0 0 0;
+  padding: 4.7% 4.7% 5.8%;
+  border: $border_button_light;
+
+  @include for_mobile {
+    margin: 0;
+    padding: 0;
+
+    border: none;
+  }
+}
+
+.product-summary__item {
+  @include for_mobile {
+    border-top: $border_button_light;
+    opacity: 0.5;
+
+    &:last-child {
+      border-bottom: $border_button_light;
+    }
+
+    &--open {
+      opacity: 1;
+
+      h3 a::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.product-summary__item-wrapper {
+  display: none;
+
+  &--open {
+    display: block;
+  }
+
+  p {
+    padding: 0 5%;
+  }
+}
+
+.product-summary__item-heading {
+  @include streak_default_remove;
+
+  @include only_desktop {
+    display: none;
+  }
+
+  a {
+    @include for_mobile {
+      @include link_default_remove;
+      @include font_character(24px, 30px, $light_olive_gray);
+
+      width: 100%;
+      min-height: 59px;
+      padding: 0 12% 0 5%;
+
+      position: relative;
+
+      display: flex;
+      flex-direction: row;
+
+      align-items: center;
+      justify-content: flex-start;
+
+      font-family: $font_family_serif;
+      text-transform: uppercase;
+      font-weight: normal;
+
+      &::before {
+        position: absolute;
+        content: "";
+
+        top: 34%;
+        right: 14px;
+
+        width: 20px;
+        height: 20px;
+
+        background-image: url("../img/icon_angle.svg");
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  @include for_mobile {
+    &--warranty {
+      a {
+        min-height: 57px;
+      }
+    }
+  }
+}
