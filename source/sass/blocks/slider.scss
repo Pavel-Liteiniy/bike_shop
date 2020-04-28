@@ -66,12 +66,24 @@
     }
   }
 
+  &--prev-card {
+    @include only_desktop {
+      left: 98px;
+    }
+  }
+
   &--next {
     right: 51px;
     background-image: url("../img/icon_slider_btn_right.svg");
 
     @include for_mobile {
       right: 4px;
+    }
+  }
+
+  &--next-card {
+    @include only_desktop {
+      right: 98px;
     }
   }
 }
