@@ -131,6 +131,34 @@
   }
 }
 
+.product__match {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  color: $beaver;
+
+  padding: 5px;
+
+  transform: translateX(48px);
+
+  @include for_mobile {
+    display: none;
+  }
+
+  @include only_desktop {
+    &:hover,
+    &:focus {
+      outline: none;
+      opacity: 0.6;
+    }
+
+    &:active {
+      outline: none;
+      opacity: 0.3;
+    }
+  }
+}
+
 .product__content {
   width: 220px;
   margin: 0 auto;
