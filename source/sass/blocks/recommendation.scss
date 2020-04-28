@@ -1,0 +1,29 @@
+.recommendation__inner {
+  padding: 70px 0 72px;
+
+  @include for_mobile {
+    padding: 25px 0 53px;
+  }
+}
+
+.recommendation__title {
+  @include font_character(48px, 56px, $light_olive_gray);
+
+  padding: 0 0 0 20px;
+  margin: 0 auto 79px;
+
+  font-family: $font_family_serif;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include for_mobile {
+    @include font_character(22px, 30px, $light_olive_gray);
+
+    margin: 0 auto 28px;
+    padding: 0;
+  }
+
+  p {
+    @include streak_default_remove;
+  }
+}
