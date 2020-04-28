@@ -57,6 +57,14 @@
 
     min-height: 172px;
     padding: 14px 3% 14px;
+
+    &--light {
+      min-height: 184px;
+      margin: 0 auto;
+      padding: 24px 1% 24px;
+
+      border-top: $border_button_light;
+    }
   }
 }
 
