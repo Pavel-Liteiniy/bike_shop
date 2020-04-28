@@ -69,7 +69,8 @@
     font-family: $font_family_serif;
   }
 
-  input[type="checkbox"] + label {
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
     position: relative;
 
     &::before {
@@ -86,7 +87,8 @@
     }
   }
 
-  input[type="checkbox"]:checked + label {
+  input:checked + label,
+  input:checked + label {
     &::after {
       position: absolute;
       left: 0;
@@ -105,22 +107,13 @@
   }
 
   @include only_desktop {
-    input[type="checkbox"]:not(:checked) + label:hover,
-    input[type="checkbox"]:not(:checked):focus + label {
+    input + label:hover,
+    input:focus + label {
+      opacity: 0.6;
+
+      &::before,
       &::after {
-        position: absolute;
-        left: 0;
-        top: 65%;
-        transform: translateY(-50%);
-
-        content: "";
-        width: 16px;
-        height: 16px;
-
-        padding: 7px;
-
-        background-color: $beaver;
-        background-clip: content-box;
+        opacity: 0.6;
       }
     }
   }
@@ -184,10 +177,17 @@
     height: 1px;
 
     background-color: currentColor;
+
+    animation-duration: 200ms;
+    animation-fill-mode: both;
+  }
+
+  &::after {
+    animation-name: minus;
   }
 
   &--open::after {
-    transform: rotate(90deg);
+    animation-name: plus;
   }
 }
 
