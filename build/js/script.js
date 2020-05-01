@@ -62,17 +62,22 @@ if (settings) {
 var filterWrappers = document.querySelectorAll('.settings__wrapper');
 var filterButtons = document.querySelectorAll('.settings__button');
 
+var changefilterButton = function (filterButton) {
+  filterButton.onclick = function () {
+    filterButton.classList.toggle('settings__button--open');
+
+    for (var j = 0; j < filterWrappers.length; ++j) {
+      if (filterButton.dataset.buttonFilters === filterWrappers[j].dataset.wrapperFilters) {
+        filterWrappers[j].classList.toggle('settings__wrapper--hide');
+      }
+    }
+  };
+};
+
 var wrapFilters = function () {
   for (var i = 0; i < filterButtons.length; ++i) {
-    filterButtons[i].onclick = function () {
-      filterButtons[i].classList.toggle('settings__button--open');
-
-      for (var j = 0; i < filterWrappers.length; ++i) {
-        if (filterButtons[i].dataset.buttonFilters === filterWrappers[j].dataset.wrapperFilters) {
-          filterWrappers[j].classList.toggle('settings__wrapper--hide');
-        }
-      }
-    };
+    var filterButton = filterButtons[i];
+    changefilterButton(filterButton);
   }
 };
 
@@ -86,21 +91,27 @@ var productColorImages = document.querySelectorAll('.product-card__image-item');
 var productColorButtons = document.querySelectorAll('.product-card__color-button');
 var productColorButtonChecked = productColorButtons[0];
 
+var checkColor = function (productColorButton) {
+  productColorButton.onclick = function () {
+    for (var j = 0; j < productColorImages.length; ++j) {
+      if (productColorButton.dataset.productColorButton === productColorImages[j].dataset.productColorImage) {
+        productColorImages[j].style.display = 'block';
+      } else {
+        productColorImages[j].style.display = 'none';
+      }
+    }
+  };
+};
+
 var switchColors = function () {
   for (var i = 0; i < productColorButtons.length; ++i) {
-    if (productColorButtons[i].checked) {
-      productColorButtonChecked = productColorButtons[i];
+    var productColorButton = productColorButtons[i];
+
+    if (productColorButton.checked) {
+      productColorButtonChecked = productColorButton;
     }
 
-    productColorButtons[i].onclick = function () {
-      for (var j = 0; i < productColorImages.length; ++j) {
-        if (productColorButtons[i].dataset.productColorButton === productColorImages[j].dataset.productColorImage) {
-          productColorImages[j].style.display = 'block';
-        } else {
-          productColorImages[j].style.display = 'none';
-        }
-      }
-    };
+    checkColor(productColorButton);
   }
 };
 
@@ -125,26 +136,31 @@ if (productColorImages) {
 var tabButtons = document.querySelectorAll('.product-summary__tabs-button');
 var tabBlocks = document.querySelectorAll('.product-summary__item');
 
+var findDeskTabs = function (tabButton) {
+  tabButton.onclick = function () {
+    for (var j = 0; j < tabBlocks.length; ++j) {
+      var wrapper = tabBlocks[j].querySelector('.product-summary__item-wrapper');
+      if (tabButton.dataset.tabLink === tabBlocks[j].dataset.tabBlock) {
+        tabBlocks[j].classList.add('.product-summary__item--open');
+        wrapper.classList.add('product-summary__item-wrapper--open');
+      } else {
+        tabBlocks[j].classList.remove('.product-summary__item--open');
+        wrapper.classList.remove('product-summary__item-wrapper--open');
+      }
+    }
+  };
+};
+
 var openBlocks = function () {
   for (var i = 0; i < tabButtons.length; ++i) {
-    tabButtons[i].onclick = function () {
-      for (var j = 0; j < tabBlocks.length; ++j) {
-        var wrapper = tabBlocks[j].querySelector('.product-summary__item-wrapper');
-        if (tabButtons[i].dataset.tabLink === tabBlocks[j].dataset.tabBlock) {
-          tabBlocks[j].classList.add('.product-summary__item--open');
-          wrapper.classList.add('product-summary__item-wrapper--open');
-        } else {
-          tabBlocks[j].classList.remove('.product-summary__item--open');
-          wrapper.classList.remove('product-summary__item-wrapper--open');
-        }
-      }
-    };
+    var tabButton = tabButtons[i];
+    findDeskTabs(tabButton);
 
-    if (tabButtons[i].checked) {
+    if (tabButton.checked) {
       for (var j = 0; j < tabBlocks.length; ++j) {
         var wrapper = tabBlocks[j].querySelector('.product-summary__item-wrapper');
 
-        if (tabButtons[i].dataset.tabLink !== tabBlocks[j].dataset.tabBlock) {
+        if (tabButton.dataset.tabLink !== tabBlocks[j].dataset.tabBlock) {
           wrapper.classList.remove('product-summary__item-wrapper--open');
         } else {
           wrapper.classList.add('product-summary__item-wrapper--open');
@@ -161,21 +177,25 @@ if (tabButtons && (document.body.clientWidth >= 768)) {
 // Открытие и закрытие вкладок в мобильной версии вкладок с детализированной информацией по товару
 
 var tabLinks = document.querySelectorAll('.product-summary__item-heading a');
+var findMobileTabs = function (tabLink) {
+  tabLink.addEventListener('click', function (evt) {
+    evt.preventDefault();
+
+    for (var j = 0; j < tabBlocks.length; ++j) {
+      var wrapper = tabBlocks[j].querySelector('.product-summary__item-wrapper');
+
+      if (tabLink.dataset.tabLink === tabBlocks[j].dataset.tabBlock) {
+        tabBlocks[j].classList.toggle('product-summary__item--open');
+        wrapper.classList.toggle('product-summary__item-wrapper--open');
+      }
+    }
+  });
+};
 
 var openMobBlocks = function () {
   for (var i = 0; i < tabLinks.length; ++i) {
-    tabLinks[i].addEventListener('click', function (evt) {
-      evt.preventDefault();
-
-      for (var j = 0; j < tabBlocks; ++j) {
-        var wrapper = tabBlocks[j].querySelector('.product-summary__item-wrapper');
-
-        if (tabLinks[i].dataset.tabLink === tabBlocks[j].dataset.tabBlock) {
-          tabBlocks[j].classList.toggle('product-summary__item--open');
-          wrapper.classList.toggle('product-summary__item-wrapper--open');
-        }
-      }
-    });
+    var tabLink = tabLinks[i];
+    findMobileTabs(tabLink);
   }
 };
 
