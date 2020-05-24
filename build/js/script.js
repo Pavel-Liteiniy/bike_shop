@@ -35,7 +35,7 @@ if (productSummary) {
     for (var j = 0; j < summaryContents.length; ++j) {
       summaryContents[j].classList.remove('product-summary__item-wrapper--no-js');
     }
-  }
+  };
 
   hideSummaries();
 }
