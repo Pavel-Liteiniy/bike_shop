@@ -27,7 +27,6 @@ openButton.addEventListener('click', function (evt) {
 
   modal.classList.add('header__wrapper--open');
   modal.classList.remove('header__wrapper--close');
-  document.querySelector('.page').style.overflow = 'hidden';
 });
 
 closeButton.addEventListener('click', function (evt) {
@@ -35,7 +34,6 @@ closeButton.addEventListener('click', function (evt) {
 
   modal.classList.add('header__wrapper--close');
   modal.classList.remove('header__wrapper--open');
-  document.querySelector('.page').style.overflow = 'visible';
 });
 
 // открывает-закрвывает блок с фильтрами в каталоге
@@ -202,3 +200,22 @@ var openMobBlocks = function () {
 if (tabLinks && (document.body.clientWidth < 768)) {
   openMobBlocks();
 }
+
+window.onresize = function () {
+  if (tabButtons && (document.body.clientWidth >= 768)) {
+    openBlocks();
+  }
+  if (tabLinks && (document.body.clientWidth < 768)) {
+    for (var i = 0; i < tabButtons.length; ++i) {
+      var tabButton = tabButtons[i];
+      if (tabButton.checked) {
+        for (var j = 0; j < tabBlocks.length; ++j) {
+          if (tabButton.dataset.tabLink === tabBlocks[j].dataset.tabBlock) {
+            wrapper.classList.remove('product-summary__item-wrapper--open');
+          }
+        }
+      }
+    }
+    openMobBlocks();
+  }
+};

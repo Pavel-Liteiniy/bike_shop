@@ -30,8 +30,9 @@
     "test": "npm run editorconfig && npm run stylelint && eslint source/js/",
     "build": "gulp build",
     "start": "gulp start",
-    "webp": "gulp webp",
-    "sprite": "gulp sprite"
+    "sprite": "gulp sprite",
+    "images": "gulp images",
+    "webp": "gulp webp"
   },
   "browserslist": [
     "last 2 versions",
