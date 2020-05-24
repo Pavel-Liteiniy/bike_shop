@@ -5,9 +5,15 @@
   }
 }
 
+@mixin for_tablet {
+  @media (max-width: $breakpoint_desktop - 1) {
+    @content;
+  }
+}
+
 // только для настольной версии
 @mixin only_desktop {
-  @media (min-width: $breakpoint_tablet) {
+  @media (min-width: $breakpoint_desktop) {
     @content;
   }
 }
