@@ -20,9 +20,15 @@
 }
 
 .filters__inner {
+  @include for_tablet {
+    padding: 0 15px;
+  }
+}
+
+.filters__wrapper {
   width: auto;
   min-height: 60px;
-  margin: 3px 2.9% 44px 3.85%;
+  margin: 3px auto 44px;
   padding: 0;
 
   display: flex;
@@ -37,8 +43,7 @@
   @include for_mobile {
     min-height: 40px;
     min-width: auto;
-    margin: 3px auto 0;
-    width: 90.63%;
+    margin: 3px auto;
   }
 }
 
@@ -99,12 +104,16 @@
   @include font_character(17px, 17px, $juicy_chestnut_craiola);
   @include button_default_remove;
 
+  display: none;
+
   font-family: $font_family_serif;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
-  @include only_desktop {
-    display: none;
+  outline: none;
+
+  @include for_mobile {
+    display: block;
   }
 }
 
@@ -200,7 +209,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
-  margin: 0 0 0 2.8%;
+  margin: 0 3px 0 2.8%;
+
+  @include for_mobile {
+    margin: 0;
+  }
 }
 
 .filters__visibility {

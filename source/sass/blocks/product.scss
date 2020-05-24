@@ -47,6 +47,20 @@
       margin: auto;
     }
   }
+
+  &--rudder {
+    picture {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    img {
+      width: auto;
+      max-width: none;
+    }
+  }
 }
 
 .product--micargi {

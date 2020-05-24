@@ -41,7 +41,7 @@
     padding: 34px 35px 38px 53px;
   }
 
-  @include for_mobile {
+  @include for_tablet {
     min-height: 54px;
 
     padding: 10px 10px 10px 15px;
@@ -51,12 +51,14 @@
     }
 
     &--card {
-      @include for_mobile {
+      @include for_tablet {
         padding: 12px 10px 15px 15px;
       }
     }
 
     &--no-js {
+      position: static;
+
       flex-wrap: wrap;
 
       .header__button--open,
@@ -78,7 +80,7 @@
 .header__button {
   display: none;
 
-  @include for_mobile {
+  @include for_tablet {
     @include button_default_remove;
 
     display: block;
@@ -116,20 +118,20 @@
 
   transition-duration: 100ms;
 
-  @include for_mobile {
+  outline: none;
+
+  @include for_tablet {
     margin: auto;
   }
 
   @include only_desktop {
     &:hover:not(.header__logo-link--current),
     &:focus:not(.header__logo-link--current) {
-      outline: none;
       opacity: 0.6;
       transform: translateY(-5px);
     }
 
     &:active:not(.header__logo-link--current) {
-      outline: none;
       opacity: 0.3;
       transform: translateY(-8px);
     }
@@ -141,11 +143,15 @@
 
   &--light {
     color: $beaver;
+
+    @include for_tablet {
+      color: $pale_taupe;
+    }
   }
 }
 
 .header__logo-image {
-  @include for_mobile {
+  @include for_tablet {
     width: 130px;
     height: 22px;
   }
@@ -155,7 +161,7 @@
   flex-grow: 1;
   width: 79.94%;
 
-  @include for_mobile {
+  @include for_tablet {
     position: absolute;
     top: 0;
     left: 0;
@@ -172,6 +178,8 @@
     align-items: flex-start;
 
     background-color: $forest_wolf;
+
+    transform: translateX(-100%);
 
     &--open {
       transform: translateX(0);
@@ -203,7 +211,7 @@
   &--cart-shortcut {
     display: none;
 
-    @include for_mobile {
+    @include for_tablet {
       display: block;
       width: 30px;
       height: 30px;

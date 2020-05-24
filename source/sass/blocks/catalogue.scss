@@ -18,4 +18,14 @@
 
   justify-content: space-between;
   align-items: stretch;
+
+  @include for_tablet {
+    padding: 0 15px;
+  }
+
+  &--no-js {
+    @include for_mobile {
+      flex-direction: column;
+    }
+  }
 }

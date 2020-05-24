@@ -1,7 +1,8 @@
 .settings {
   width: 13.32%;
   min-width: 182px;
-  margin: 0 0 0 3.85%;
+  // margin: 0 0 0 3.85%;
+  margin: 0;
 
   @include for_mobile {
     width: 95.31%;
@@ -17,10 +18,21 @@
     background-color: $forest_wolf;
     box-shadow: 4px 0 20px rgba($dark_rangoon, 0.1);
 
-    transition-duration: 300ms;
+    transform: translateX(-100%);
+
 
     &--hide {
-      left: -100%;
+      transform: translateX(-100%);
+      transition-property: transform;
+      transition-duration: 300ms;
+      transition-timing-function: linear;
+    }
+
+    &--open {
+      transform: translateX(0);
+      transition-property: transform;
+      transition-duration: 300ms;
+      transition-timing-function: linear;
     }
 
     &--no-js {
@@ -28,6 +40,8 @@
 
       width: 90.63%;
       margin: 10px auto 0;
+
+      transform: none;
 
       .settings__button-close {
         display: none;
@@ -41,10 +55,6 @@
   padding: 0;
 }
 
-.settings__band {
-  margin: 0 0 12px;
-}
-
 .settings__form {
   fieldset {
     @include font_character(14px, 18px, $beaver);
@@ -55,18 +65,6 @@
     letter-spacing: 0.2px;
     font-family: $font_family_sans_serif;
     border: none;
-  }
-
-  legend {
-    @include font_character(18px, 18px, $beaver);
-    @include streak_default_remove;
-
-    display: block;
-    width: 100%;
-    padding: 0 14px 0 0;
-
-    letter-spacing: 0.04em;
-    font-family: $font_family_serif;
   }
 
   input[type="checkbox"] + label,
@@ -139,29 +137,48 @@
   }
 }
 
+legend {
+  // @include font_character(18px, 18px, $beaver);
+  @include streak_default_remove;
+
+  display: block;
+  width: 100%;
+  // padding: 0 14px 0 0;
+
+  // letter-spacing: 0.04em;
+  // font-family: $font_family_serif;
+}
+
 .settings__button {
+  @include font_character(18px, 18px, $beaver);
   @include button_default_remove;
 
-  color: inherit;
+  display: block;
+  width: 100%;
+  padding: 0 14px 0 0;
 
-  position: absolute;
-  top: 0;
-  right: 0;
+  letter-spacing: 0.04em;
+  font-family: $font_family_serif;
+  text-align: left;
 
-  width: 14px;
-  height: 18px;
+  position: relative;
+  // top: 0;
+  // right: 0;
+
+  // width: 14px;
+  // height: 18px;
 
   transition-duration: 100ms;
+
+  outline: none;
 
   @include only_desktop {
     &:hover,
     &:focus {
-      outline: none;
       opacity: 0.6;
     }
 
     &:active {
-      outline: none;
       opacity: 0.3;
     }
   }
@@ -169,8 +186,8 @@
   &::before,
   &::after {
     position: absolute;
-    left: 0;
-    top: 45%;
+    right: 0;
+    top: 43%;
 
     content: "";
     width: 14px;
@@ -216,6 +233,8 @@
   @include font_character(18px, 18px, $beaver);
   @include button_default_remove;
 
+  outline: none;
+
   @include only_desktop {
     display: none;
   }
@@ -225,9 +244,7 @@
 }
 
 .settings__button-wrapper {
-  @include only_desktop {
-    display: none;
-  }
+  display: none;
 
   @include for_mobile {
     position: relative;
@@ -250,9 +267,7 @@
   @include font_character(18px, 18px, $juicy_chestnut_craiola);
   @include button_default_remove;
 
-  @include only_desktop {
-    display: none;
-  }
+  outline: none;
 
   @include for_mobile {
     font-family: $font_family_serif;
@@ -267,6 +282,8 @@
 
   width: 17px;
   height: 16px;
+
+  outline: none;
 
   &::before,
   &::after {
@@ -291,10 +308,17 @@
 }
 
 .settings__range {
+  display: none;
+
   @include for_mobile {
+    display: block;
     min-height: 82px;
     padding: 26px 0 32px;
   }
+}
+
+.settings__band {
+  margin: 0 0 17px;
 }
 
 .settings__description {

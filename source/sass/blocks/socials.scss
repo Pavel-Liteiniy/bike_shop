@@ -7,13 +7,14 @@
   justify-content: space-between;
   align-items: center;
 
-  min-width: 100px;
+  min-width: 110px;
 }
 
 .socials__link {
   @include link_default_remove;
 
   display: block;
+  margin: 5px;
 
   transition: 100ms;
 
@@ -22,7 +23,15 @@
   }
 
   &--dark {
+    @include only_desktop {
+      color: $beaver;
+    }
+
     color: $pale_taupe;
+
+    @include for_mobile {
+      margin: 0 5px 5px;
+    }
   }
 
   &--light {

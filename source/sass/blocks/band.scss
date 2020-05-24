@@ -48,6 +48,8 @@
 
     transition-duration: 100ms;
 
+    outline: none;
+
     @include only_desktop {
       &:hover,
       &:focus {
@@ -56,7 +58,6 @@
       }
 
       &:active {
-        outline: none;
         opacity: 0.3;
       }
     }
@@ -65,36 +66,20 @@
 
 .band__scale {
   position: relative;
-  height: 6px;
 }
 
 .band__bar {
   width: 100%;
-  height: 0;
-  margin: 3px 0;
+  height: 1px;
 
-  border-top: $border_button_light;
+  background-color: $beaver;
 
   position: relative;
-
-  &::before {
-    position: absolute;
-    content: "";
-    width: auto;
-    height: 0;
-
-    top: -2px;
-    left: 13%;
-    right: 34%;
-
-    border-top: $border_button_light;
-  }
 }
 
 .band__toggle {
   position: absolute;
-  top: 8%;
-  transform: translateY(-50%);
+  top: 1px;
 
   width: 18px;
   height: 18px;
@@ -107,11 +92,13 @@
   cursor: pointer;
 
   &--min {
-    left: 9%;
+    left: 0;
+    transform: translate(-50%, -50%);
   }
 
   &--max {
-    right: 30%;
+    right: 0;
+    transform: translate(50%, -50%);
   }
 
   @include only_desktop {
@@ -124,4 +111,14 @@
       background-color: $pale_brown;
     }
   }
+}
+
+.band__gap {
+  position: absolute;
+  width: 49.5%;
+  height: 2px;
+  top: 0;
+  transform: translate(30%, -50%);
+
+  background-color: $beaver;
 }
