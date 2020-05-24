@@ -4,6 +4,11 @@
 
 var header = document.querySelector('.header__inner');
 var settings = document.querySelector('.settings');
+var catalogueInner = document.querySelector('.catalogue__inner');
+var tabList = document.querySelector('.product-summary__tabs-list');
+var productSummary = document.querySelector('.product-summary__item');
+var summaryHeadings = document.querySelectorAll('.product-summary__item-heading');
+var summaryContents = document.querySelectorAll('.product-summary__item-wrapper');
 
 if (header) {
   header.classList.remove('header__inner--no-js');
@@ -13,28 +18,49 @@ if (settings) {
   settings.classList.remove('settings--no-js');
 }
 
+if (catalogueInner) {
+  catalogueInner.classList.remove('catalogue__inner--no-js');
+}
+
+if (tabList) {
+  tabList.classList.remove('product-summary__tabs-list--no-js');
+}
+
+if (productSummary) {
+  var hideSummaries = function () {
+    for (var i = 0; i < summaryHeadings.length; ++i) {
+      summaryHeadings[i].classList.remove('product-summary__item-heading--no-js');
+    }
+
+    for (var j = 0; j < summaryContents.length; ++j) {
+      summaryContents[j].classList.remove('product-summary__item-wrapper--no-js');
+    }
+  }
+
+  hideSummaries();
+}
+
 // открывает-закрвывает меню в шапке
 
 var openButton = document.querySelector('.header__button--open');
 var closeButton = document.querySelector('.header__button--close');
 var modal = document.querySelector('.header__wrapper');
 
-modal.classList.remove('header__wrapper--open');
-modal.classList.add('header__wrapper--close');
+if (modal) {
+  openButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
 
-openButton.addEventListener('click', function (evt) {
-  evt.preventDefault();
+    modal.classList.remove('header__wrapper--close');
+    modal.classList.add('header__wrapper--open');
+  });
 
-  modal.classList.add('header__wrapper--open');
-  modal.classList.remove('header__wrapper--close');
-});
+  closeButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
 
-closeButton.addEventListener('click', function (evt) {
-  evt.preventDefault();
-
-  modal.classList.add('header__wrapper--close');
-  modal.classList.remove('header__wrapper--open');
-});
+    modal.classList.remove('header__wrapper--open');
+    modal.classList.add('header__wrapper--close');
+  });
+}
 
 // открывает-закрвывает блок с фильтрами в каталоге
 
@@ -46,11 +72,13 @@ if (settings) {
     evt.preventDefault();
 
     settings.classList.remove('settings--hide');
+    settings.classList.add('settings--open');
   });
 
   closeSettings.addEventListener('click', function (evt) {
     evt.preventDefault();
 
+    settings.classList.remove('settings--open');
     settings.classList.add('settings--hide');
   });
 }
@@ -175,6 +203,8 @@ if (tabButtons && (document.body.clientWidth >= 768)) {
 // Открытие и закрытие вкладок в мобильной версии вкладок с детализированной информацией по товару
 
 var tabLinks = document.querySelectorAll('.product-summary__item-heading a');
+var wrappers = document.querySelectorAll('.product-summary__item-wrapper');
+
 var findMobileTabs = function (tabLink) {
   tabLink.addEventListener('click', function (evt) {
     evt.preventDefault();
@@ -211,7 +241,7 @@ window.onresize = function () {
       if (tabButton.checked) {
         for (var j = 0; j < tabBlocks.length; ++j) {
           if (tabButton.dataset.tabLink === tabBlocks[j].dataset.tabBlock) {
-            wrapper.classList.remove('product-summary__item-wrapper--open');
+            wrappers[j].classList.remove('product-summary__item-wrapper--open');
           }
         }
       }
