@@ -1,17 +1,27 @@
 @font-face {
   font-weight: normal;
-  font-family: "Hagin Caps Medium";
+  font-family: "hagin caps medium";
   font-style: normal;
   font-display: swap;
-  src: local("Hagin Caps Medium"), local("HaginCapsMedium"), local("Hagin Caps Medium Medium"), local("HaginCapsMediumMedium"), url("../fonts/hagin-caps-medium-medium.woff2") format("woff2"), url("../fonts/hagin-caps-medium-medium.woff") format("woff");
+  src: local("hagin caps medium"),
+    local("hagincapsmedium"),
+    local("hagin caps medium medium"),
+    local("hagincapsmediummedium"),
+    url("../fonts/hagin-caps-medium-medium.woff2") format("woff2"),
+    url("../fonts/hagin-caps-medium-medium.woff") format("woff");
 }
 
 @font-face {
   font-weight: normal;
-  font-family: "Roboto";
+  font-family: "roboto";
   font-style: normal;
   font-display: swap;
-  src: local("Roboto"), local("Roboto"), url("../fonts/roboto-regular.woff2") format("woff2"), url("../fonts/roboto-regular.woff") format("woff");
+  src: local("roboto"),
+    local("roboto regular"),
+    local("robotoregular"),
+    local("roboto-regular"),
+    url("../fonts/roboto-regular.woff2") format("woff2"),
+    url("../fonts/roboto-regular.woff") format("woff");
 }
 
 @keyframes plus {
