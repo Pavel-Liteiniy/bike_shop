@@ -1,0 +1,20 @@
+{
+    "name": "Chopper Bikeshop",
+    "short_name": "Chopper Bikeshop",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#a5bcec",
+    "background_color": "#a5bcec",
+    "start_url": "main.html",
+    "display": "standalone"
+}
